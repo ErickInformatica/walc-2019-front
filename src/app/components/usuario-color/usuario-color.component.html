@@ -1,0 +1,306 @@
+<div class="section profile-content">
+  <div class="container">
+    <div class="nav-tabs-navigation">
+      <div class="nav-tabs-wrapper">
+        <ngb-tabset [justify]="'center'">
+          <ngb-tab title="Color Blanco ({{lengthWhite}})">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                <div class="col-md-4" *ngFor='let user of usersColorWhite'>
+                  <div class="card">
+                    <img class="card-img-top"
+                      src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                      alt="Card image cap" *ngIf="!user.user.image">
+                    <img class="card-img-top"
+                    src="{{user.user.image}}" alt="Card image cap"
+                      *ngIf="user.user.image">
+                    <div class="card-body">
+                      <h2 class="card-text">{{user.user.primerApellido}}, {{user.user.primerNombre}}</h2>
+                      <h5 class="card-text">{{user.track.titulo}}</h5>
+                      <h6>Cambio de Color</h6>
+                      <button type="button" value="White" #whiteButton
+                        (click)="cambiarColor(whiteButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: White; border-color: black"><i class="fa fa-check"
+                          style="color: black"></i>
+                      </button>
+                      <button type="button" value="Red" #redButton
+                        (click)="cambiarColor(redButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Red; border-color: black"><i
+                          class="fa fa-check"></i>
+                      </button>
+                      <button type="button" value="Blue" #blueButton
+                        (click)="cambiarColor(blueButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Blue; border-color: black"><i
+                          class="fa fa-check"></i>
+                      </button>
+                      <button type="button" value="Yellow" #yellowButton
+                        (click)="cambiarColor(yellowButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Yellow; border-color: black"><i class="fa fa-check"
+                          style="color: black"></i>
+                      </button>
+                    </div>
+                    <div class="text-center">
+                      <button type="button" class="btn btn-primary btn-circle btn-xl"
+                        [style.background-color]="user.color" style="border-color: white;"></button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Color Rojo ({{lengthRed}})">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                <div class="col-md-4" *ngFor='let user of usersColorRed'>
+                  <div class="card">
+                    <img class="card-img-top"
+                      src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                      alt="Card image cap" *ngIf="!user.user.image">
+                    <img class="card-img-top"
+                    src="{{user.user.image}}" alt="Card image cap"
+                      *ngIf="user.user.image">
+                    <div class="card-body">
+                      <h2 class="card-text">{{user.user.primerApellido}}, {{user.user.primerNombre}}</h2>
+                      <h6>Cambio de Color</h6>
+                      <button type="button" value="White" #whiteButton
+                        (click)="cambiarColor(whiteButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: White; border-color: black"><i class="fa fa-check"
+                          style="color: black"></i>
+                      </button>
+                      <button type="button" value="Red" #redButton
+                        (click)="cambiarColor(redButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Red; border-color: black"><i
+                          class="fa fa-check"></i>
+                      </button>
+                      <button type="button" value="Blue" #blueButton
+                        (click)="cambiarColor(blueButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Blue; border-color: black"><i
+                          class="fa fa-check"></i>
+                      </button>
+                      <button type="button" value="Yellow" #yellowButton
+                        (click)="cambiarColor(yellowButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Yellow; border-color: black"><i class="fa fa-check"
+                          style="color: black"></i>
+                      </button>
+                    </div>
+                    <div class="text-center">
+                      <button type="button" class="btn btn-primary btn-circle btn-xl" style="border-color: white;"
+                        [style.background-color]="user.color"></button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Color Azul ({{lengthBlue}})">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                <div class="col-md-4" *ngFor='let user of usersColorBlue'>
+                  <div class="card">
+                    <img class="card-img-top"
+                      src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                      alt="Card image cap" *ngIf="!user.user.image">
+                    <img class="card-img-top"
+                    src="{{user.user.image}}" alt="Card image cap"
+                      *ngIf="user.user.image">
+                    <div class="card-body">
+                      <h2 class="card-text">{{user.user.primerApellido}}, {{user.user.primerNombre}}</h2>
+                      <h6>Cambio de Color</h6>
+                      <button type="button" value="White" #whiteButton
+                        (click)="cambiarColor(whiteButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: White; border-color: black"><i class="fa fa-check"
+                          style="color: black"></i>
+                      </button>
+                      <button type="button" value="Red" #redButton
+                        (click)="cambiarColor(redButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Red; border-color: black"><i
+                          class="fa fa-check"></i>
+                      </button>
+                      <button type="button" value="Blue" #blueButton
+                        (click)="cambiarColor(blueButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Blue; border-color: black"><i
+                          class="fa fa-check"></i>
+                      </button>
+                      <button type="button" value="Yellow" #yellowButton
+                        (click)="cambiarColor(yellowButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Yellow; border-color: black"><i class="fa fa-check"
+                          style="color: black"></i>
+                      </button>
+                    </div>
+                    <div class="text-center">
+                      <button type="button" class="btn btn-primary btn-circle btn-xl" style="border-color: white;"
+                        [style.background-color]="user.color"></button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Color Amarillo ({{lengthYellow}})">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                <div class="col-md-4" *ngFor='let user of usersColorYellow'>
+                  <div class="card">
+                    <img class="card-img-top"
+                      src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                      alt="Card image cap" *ngIf="!user.user.image">
+                    <img class="card-img-top"
+                    src="{{user.user.image}}" alt="Card image cap"
+                      *ngIf="user.user.image">
+                    <div class="card-body">
+                      <h2 class="card-text">{{user.user.primerApellido}}, {{user.user.primerNombre}}</h2>
+                      <h6>Cambio de Color</h6>
+                      <button type="button" value="White" #whiteButton
+                        (click)="cambiarColor(whiteButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: White; border-color: black"><i class="fa fa-check"
+                          style="color: black"></i>
+                      </button>
+                      <button type="button" value="Red" #redButton
+                        (click)="cambiarColor(redButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Red; border-color: black"><i
+                          class="fa fa-check"></i>
+                      </button>
+                      <button type="button" value="Blue" #blueButton
+                        (click)="cambiarColor(blueButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Blue; border-color: black"><i
+                          class="fa fa-check"></i>
+                      </button>
+                      <button type="button" value="Yellow" #yellowButton
+                        (click)="cambiarColor(yellowButton.value, user.user._id)" class="btn btn-primary btn-circle"
+                        style="margin-right: 10px; background-color: Yellow; border-color: black"><i class="fa fa-check"
+                          style="color: black"></i>
+                      </button>
+                    </div>
+                    <div class="text-center">
+                      <button type="button" class="btn btn-primary btn-circle btn-xl" style="border-color: white;"
+                        [style.background-color]="user.color"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <body style="margin-top: 5%">
+
+  <body style="margin-top:5%;">
+      <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="row">
+          <div class="col-md-3" >
+            <div class="container">
+              <div class="display">
+                <div class="display-item">
+                  <div class="card seamus">
+                    <div class="card-top"></div>
+                    <div class="card-profile">
+                      <div class="profile-image">
+                        <img class="mb-4"
+                          src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png" alt="">
+                      </div>
+                    </div>
+                    <div class="card-info">
+                      <div class="info-title">
+                        <h2>{{user.user.nombre}}</h2>
+                        <h6>Cambio de Color</h6>
+                        <button type="button" class="btn btn-primary btn-circle" style="margin-right: 10px; background-color: White; border-color: black"><i class="fa fa-check" style="color: black"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-circle" style="margin-right: 10px; background-color: Red; border-color: black"><i class="fa fa-check"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-circle" style="margin-right: 10px; background-color: Blue; border-color: black"><i class="fa fa-check"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-circle" style="margin-right: 10px; background-color: Yellow; border-color: black"><i class="fa fa-check" style="color: black"></i>
+                        </button>
+                      </div>
+                      <div class="text-center">
+                          <button type="button" class="btn btn-primary btn-circle btn-xl"  [style.background-color]="user.color"></button>
+                      </div>
+                      
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="row">
+          <div class="col-md-3" *ngFor='let user of users'>
+            <div class="container">
+              <div class="display">
+                <div class="display-item">
+                  <div class="card seamus">
+                    <div class="card-top"></div>
+                    <div class="card-profile">
+                      <div class="profile-image">
+                        <img class="mb-4"
+                          src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png" alt="">
+                      </div>
+                    </div>
+                    <div class="card-info">
+                      <div class="info-title">
+                        <h2>{{user.nombre}}</h2>
+                        <h6>{{user.email}}</h6>
+                        <h5>{{user.rol}}</h5>
+                      </div>
+                      <select id="inputState" class="form-control">
+                        <option selected>Blanco</option>
+                        <option>Rojo</option>
+                        <option>Azul</option>
+                        <option>Amarillo</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="row">
+          <div class="col-md-3" *ngFor='let user of users'>
+            <div class="container">
+              <div class="display">
+                <div class="display-item">
+                  <div class="card seamus">
+                    <div class="card-top"></div>
+                    <div class="card-profile">
+                      <div class="profile-image">
+                        <img class="mb-4"
+                          src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png" alt="">
+                      </div>
+                    </div>
+                    <div class="card-info">
+                      <div class="info-title">
+                        <h2>{{user.nombre}}</h2>
+                        <h6>{{user.email}}</h6>
+                        <h5>{{user.rol}}</h5>
+                      </div>
+                      <select id="inputState" class="form-control">
+                        <option selected>Blanco</option>
+                        <option>Rojo</option>
+                        <option>Azul</option>
+                        <option>Amarillo</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</body> -->

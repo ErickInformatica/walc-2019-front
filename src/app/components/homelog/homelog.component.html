@@ -1,0 +1,276 @@
+<body style="margin-top: 2%">
+  <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+  <main role="main" style="margin-top: 2%">
+    <div class="container marketing" style="margin-top: 2%">
+      <div id="Conerencistas">
+        <h1 class="text-center">Conferencistas</h1>
+        <div class="container-fluid">
+          <button *ngIf="identity.rol == 'ROLE_ADMIN'" type="button container-fluid" class="btn btn-primary"
+            data-toggle="modal" data-target="#modalAgregarConferencista">Agregar</button>
+        </div>
+        <div class="row justify-content-md-center">
+          <div class="col-lg-4">
+            <div class="ratio img-responsive img-circle"
+              style="background-image: url(https://extension.illinois.edu/stain/stains-hi/235.jpg); width: 50px; height: 50px;"></div>
+            <h2>NOMBRE</h2>
+            <p>DATOS</p>
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEditarConferencista"
+              *ngIf="identity.rol == 'ROLE_ADMIN'">Editar</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalElimiarConferencista"
+              *ngIf="identity.rol == 'ROLE_ADMIN'">Eliminar</button>
+          </div>
+        </div>
+      </div>
+      <div id="Entradas">
+        <hr class="featurette-divider">
+        <h1 class="text-center">Entradas</h1>
+        <div class="container-fluid">
+          <button *ngIf="identity.rol == 'ROLE_ADMIN'" type="button container-fluid" class="btn btn-primary"
+            data-toggle="modal" data-target="#modalAgregarEntrada">Agregar</button>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">NOMBRE</h2>
+            <p class="lead text-justify">DESCRIPCION.</p>
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEditarEntrada"
+              *ngIf="identity.rol == 'ROLE_ADMIN'">Editar</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalElimiarEntrada"
+              *ngIf="identity.rol == 'ROLE_ADMIN'">Eliminar</button>
+          </div>
+          <div class="col-md-5">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+              height="500" src="https://extension.illinois.edu/stain/stains-hi/235.jpg" alt="">
+          </div>
+          <hr class="featurette-divider">
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- MODAL DE AGREGAR CONFERENCIASTA O INVITADO-->
+  <div class="modal fade" id="modalAgregarConferencista" tabindex="-1" role="dialog"
+    aria-labelledby="modalAgregarConferencista" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAgregarConferencista">Agregar Conferencista</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <form>
+                  <div class="form-group">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" class="form-control" id="Nombre" aria-describedby="nombre"
+                      placeholder="Ingrese el nombre del Conferencista">
+                  </div>
+                  <div class="form-group">
+                    <label for="Datos">Datos</label>
+                    <input type="text" class="form-control" id="Datos"
+                      placeholder="Ingrese los datos del Conferencista">
+                  </div>
+                  <div class="form-group">
+                    <label for="Imagen">Imagen</label>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                      <label class="custom-file-label" for="inputGroupFile01">Seleccione la imagen deseada</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL DE EDITAR CONFERENCISTA -->
+  <div class="modal fade" id="modalEditarConferencista" tabindex="-1" role="dialog"
+    aria-labelledby="modalEditarConferencista" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarConferencista">Editar Conferencista</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <form>
+                  <div class="form-group">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" class="form-control" id="Nombre" aria-describedby="nombre"
+                      placeholder="Ingrese el nombre del Conferencista">
+                  </div>
+                  <div class="form-group">
+                    <label for="Datos">Datos</label>
+                    <input type="text" class="form-control" id="Datos"
+                      placeholder="Ingrese los datos del Conferencista">
+                  </div>
+                  <div class="form-group">
+                    <label for="Imagen">Imagen</label>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                      <label class="custom-file-label" for="inputGroupFile01">Seleccione la imagen deseada</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL ELIMIAR CONFERENCISTA -->
+  <div class="modal fade" id="modalElimiarConferencista" tabindex="-1" role="dialog"
+    aria-labelledby="modalElimiarConferencista" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalElimiarConferencista">Eliminar Conferencista</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Está seguro que quiere eliminarlo?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary">Si</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL DE AGREGAR ENTRADA-->
+  <div class="modal fade" id="modalAgregarEntrada" tabindex="-1" role="dialog" aria-labelledby="modalAgregarEntrada"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAgregarEntrada">Agregar Entrada</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <form>
+                  <div class="form-group">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" class="form-control" id="Nombre" aria-describedby="nombre"
+                      placeholder="Ingrese el nombre del Conferencista">
+                  </div>
+                  <div class="form-group">
+                    <label for="Datos">DESCRIPCION</label>
+                    <input type="text" class="form-control" id="Datos"
+                      placeholder="Ingrese los datos del Conferencista">
+                  </div>
+                  <div class="form-group">
+                    <label for="Imagen">Imagen</label>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                      <label class="custom-file-label" for="inputGroupFile01">Seleccione la imagen deseada</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL DE EDITAR ENTRADA -->
+  <div class="modal fade" id="modalEditarEntrada" tabindex="-1" role="dialog" aria-labelledby="modalEditarEntrada"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarEntrada">Editar Conferencista</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <form>
+                  <div class="form-group">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" class="form-control" id="Nombre" aria-describedby="nombre"
+                      placeholder="Ingrese el nombre del Conferencista">
+                  </div>
+                  <div class="form-group">
+                    <label for="Datos">DESCRIPCION</label>
+                    <input type="text" class="form-control" id="Datos"
+                      placeholder="Ingrese los datos del Conferencista">
+                  </div>
+                  <div class="form-group">
+                    <label for="Imagen">Imagen</label>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                      <label class="custom-file-label" for="inputGroupFile01">Seleccione la imagen deseada</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL ELIMIAR Entrada -->
+  <div class="modal fade" id="modalElimiarEntrada" tabindex="-1" role="dialog" aria-labelledby="modalElimiarEntrada"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalElimiarEntrada">Eliminar Conferencista</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Está seguro que quiere eliminarla?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary">Si</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

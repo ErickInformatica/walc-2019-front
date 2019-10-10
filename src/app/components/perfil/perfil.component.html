@@ -1,0 +1,152 @@
+<main role="main" class="container">
+
+  <div class="row">
+    <div class="col">
+      <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm" style="background-color:#20346B">
+        <div class="lh-100">
+          <h6 class="mb-0 text-white lh-100">Perfil</h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="my-3 p-3 bg-white rounded shadow-sm">
+            <!-- *ngFor="let datos of users" -->
+            <h6 class="border-bottom border-gray pb-2 mb-0">Datos</h6>
+            <div class="media text-muted pt-3">
+              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <strong class="d-block text-gray-dark">Nombre</strong>
+                {{identity.nombre}}
+              </p>
+            </div>
+            <div class="media text-muted pt-3">
+              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <strong class="d-block text-gray-dark">Correo</strong>
+                {{identity.email}}
+              </p>
+            </div>
+            <div class="media text-muted pt-3">
+              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <strong class="d-block text-gray-dark">Telefono</strong>
+                {{identity.telefono}}
+              </p>
+            </div>
+            <div class="media text-muted pt-3">
+              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <strong class="d-block text-gray-dark">Profesión</strong>
+                {{identity.profesion}}
+              </p>
+            </div>
+            <div class="media text-muted pt-3">
+              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <strong class="d-block text-gray-dark">Sexo</strong>
+                {{identity.sexo}}
+              </p>
+            </div>
+            <div class="media text-muted pt-3">
+              <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <strong class="d-block text-gray-dark">Empresa</strong>
+                {{identity.empresa}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <!-- <img src="{{ url + '/obtener-imagen-usuario/' + identity.image }}" class="rounded-circle mx-auto d-block"
+            width="270" height="250" *ngIf="identity.image"> -->
+
+          <div class="rounded-circle" *ngIf="!identity.image">
+            <img src="../../../assets/img/logo-en.png" class="mx-auto d-block"
+              style="width: 50%; border-color: red;margin-top: 5%" alt="KINAL">
+            <img src="{{ url + '/obtener-imagen-usuario/' + identity.image }}" class="rounded-circle mx-auto d-block"
+              width="270" height="250" *ngIf="identity.image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-dark my-2 my-sm-0" style="background-color: #BF9B30" data-toggle="modal"
+    data-target="#updateModal">
+    Editar datos de perfil
+  </button>
+</main>
+
+<!--MODAL EDITAR PERFIL-->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEditarEntrada">Editar Conferencista</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #registroForm="ngForm" (ngSubmit)="updateUser()">
+          <p class="card-text">Nombre</p>
+          <div class="col-md-5">
+            <div class="form-group has-success">
+              <input type="text" class="form-control" id="name" placeholder="Nombre" name="name" #name="ngModel"
+                [(ngModel)]="identity.nombre" required autofocus style="width: 350px">
+              <span *ngIf="!name.valid && name.touched" style="color: red">*</span>
+            </div>
+          </div>
+          <p class="card-text">Telefono</p>
+          <div class="col-md-5">
+            <div class="form-group has-success">
+              <input type="text" class="form-control" id="telefono" placeholder="Telefono" name="telefono"
+                #telefono="ngModel" [(ngModel)]="identity.telefono" required style="width: 350px">
+              <span *ngIf="!telefono.valid && telefono.touched" style="color: red">*</span>
+            </div>
+          </div>
+          <p class="card-text">E-mail</p>
+          <div class="col-md-5">
+            <div class="form-group has-success">
+              <input type="email" class="form-control" id="email" placeholder="E-mail" name="email" #email="ngModel"
+                [(ngModel)]="identity.email" required style="width: 350px">
+              <span *ngIf="!email.valid && email.touched" style="color: red">*</span>
+            </div>
+          </div>
+          <p class="card-text">Profesión</p>
+          <div class="col-md-5">
+            <div class="form-group has-success">
+              <input type="text" class="form-control" id="profesion" placeholder="Profesión" name="profesion"
+                #profesion="ngModel" [(ngModel)]="identity.profesion" required style="width: 350px">
+              <span *ngIf="!profesion.valid && profesion.touched" style="color: red">*</span>
+            </div>
+          </div>
+          <p class="card-text">Sexo</p>
+          <div class="col-3">
+            <div class="form-group has-success">
+              <input type="text" class="form-control" id="sexo" placeholder="Sexo" name="sexo" #sexo="ngModel"
+                [(ngModel)]="identity.sexo" required style="width: 350px">
+              <span *ngIf="!sexo.valid && sexo.touched" style="color: red">*</span>
+            </div>
+          </div>
+          <p class="card-text">Empresa</p>
+          <div class="col-md-5">
+            <div class="form-group has-success">
+              <input type="text" class="form-control" id="empresa" placeholder="Empresa" name="empresa"
+                #empresa="ngModel" [(ngModel)]="identity.empresa" required style="width: 350px">
+              <span *ngIf="!empresa.valid && empresa.touched" style="color: red">*</span>
+            </div>
+          </div>
+          <p class="card-text">Agregar una foto de perfil</p>
+          <div class="form-group has-success">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile04" (change)="fileChangeEvent($event)"
+                aria-describedby="inputGroupFileAddon04">
+              <label class="custom-file-label" for="inputGroupFile04">Agrega una foto de perfil</label>
+            </div>
+          </div>
+
+        </form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary" (click)="updateUser()">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

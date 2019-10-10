@@ -1,0 +1,39 @@
+<body style="margin-top: 2%">
+  <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+  <main role="main" style="margin-top: 2%">
+    <div class="container marketing" style="margin-top: 2%">
+      <div id="Conerencistas">
+        <h1 class="text-center" *ngIf="statusConf == 'interesados'">Conferencia Interesada</h1>
+        <h1 class="text-center" *ngIf="statusConf == 'preinscritos'">Conferencia Preinscrita</h1>
+        <h1 class="text-center" *ngIf="statusConf == 'inscritos'">Conferencia Inscrita</h1>
+        <div class="row justify-content-md-center text-center">
+          <div class="col-lg-8" *ngFor="let mis of conferencias">
+            <!-- <div class="ratio img-responsive img-circle"
+              style="background-image: url(https://extension.illinois.edu/stain/stains-hi/235.jpg);" ></div> -->
+
+              <!-- <div [style.background-image]="image" style="             
+              min-height: 500px;
+              background-attachment: fixed;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;"></div> -->
+              <img src="https://extension.illinois.edu/stain/stains-hi/235.jpg" class="rounded-circle" *ngIf="statusConf == ''">
+              <img src="{{image}}" class="rounded-circle" *ngIf="statusConf == 'interesados'" height="300px" width="300px">
+              <img src="{{image}}" class="rounded-circle" *ngIf="statusConf == 'preinscritos'" height="300px" width="300px">
+              <img src="{{image}}" class="rounded-circle" *ngIf="statusConf == 'inscritos'" height="300px" width="300px">              
+            <h2 *ngIf="statusConf == 'interesados'">{{mis.interesado.titulo}}</h2>    
+            <h2 *ngIf="statusConf == 'preinscritos'">{{mis.preinscrito.titulo}}</h2>  
+            <h2 *ngIf="statusConf == 'inscritos'">{{mis.inscrito.titulo}}</h2>              
+            <h2>Saldo Pagado: Q.{{mis.saldo}} || $.{{mis.saldo/7.75 | number : '1.2-2'}}</h2>  
+              
+          </div>
+          
+        </div>
+        <div class="row justify-content-md-center text-center" *ngIf="statusConf == 'inscritos'">
+          <h2>Color Asignado:</h2>
+          <button type="button" class="btn btn-primary btn-circle btn-xl" *ngFor="let fil of filtered"  [style.background-color]="fil.color" style="border-color: white;"></button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

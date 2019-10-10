@@ -1,0 +1,834 @@
+<!-- <body style="margin-top: 5%"> 
+  
+    <body style="margin-top:10%;">
+        <nav>
+         
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+              aria-controls="nav-home" aria-selected="true">HANDS ON IPV6: ENRUTAMIENTO Y SERVICIOS</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+              aria-controls="nav-profile" aria-selected="false">SEGURIDAD INFORMÁTICA</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+              aria-controls="nav-contact" aria-selected="false">GESTIÓN Y MONITOREO DE REDES</a>
+              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+              aria-controls="nav-home" aria-selected="true">INTERNET DE LAS COSAS (IOT)</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+              aria-controls="nav-profile" aria-selected="false">REDES COMUNITARIAS</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+              aria-controls="nav-contact" aria-selected="false">COMPUTACIÓN EN LA NUBE Y BIG DATA</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="row">
+              <div class="col-md-3" *ngFor='let user of users'>
+                <div class="container">
+                  <div class="display">
+                    <div class="display-item">
+                      <div class="card seamus">
+                        <div class="card-top"></div>
+                        <div class="card-profile">
+                          <div class="profile-image">
+                            <img class="mb-4"
+                              src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png" alt="">
+                          </div>
+                        </div>
+                        <div class="card-info">
+                          <div class="info-title">
+                            <h2>{{user.nombre}}</h2>
+                            <h6>{{user.email}}</h6>
+                            <h5>{{user.rol}}</h5>
+                          </div>
+                          <select id="inputState" class="form-control">
+                            <option selected>Blanco</option>
+                            <option>Rojo</option>
+                            <option>Azul</option>
+                            <option>Amarillo</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="row">
+              <div class="col-md-3" *ngFor='let user of users'>
+                <div class="container">
+                  <div class="display">
+                    <div class="display-item">
+                      <div class="card seamus">
+                        <div class="card-top"></div>
+                        <div class="card-profile">
+                          <div class="profile-image">
+                            <img class="mb-4"
+                              src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png" alt="">
+                          </div>
+                        </div>
+                        <div class="card-info">
+                          <div class="info-title">
+                            <h2>{{user.nombre}}</h2>
+                            <h6>{{user.email}}</h6>
+                            <h5>{{user.rol}}</h5>
+                          </div>
+                          <select id="inputState" class="form-control">
+                            <option selected>Blanco</option>
+                            <option>Rojo</option>
+                            <option>Azul</option>
+                            <option>Amarillo</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <div class="row">
+              <div class="col-md-3" *ngFor='let user of users'>
+                <div class="container">
+                  <div class="display">
+                    <div class="display-item">
+                      <div class="card seamus">
+                        <div class="card-top"></div>
+                        <div class="card-profile">
+                          <div class="profile-image">
+                            <img class="mb-4"
+                              src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png" alt="">
+                          </div>
+                        </div>
+                        <div class="card-info">
+                          <div class="info-title">
+                            <h2>{{user.nombre}}</h2>
+                            <h6>{{user.email}}</h6>
+                            <h5>{{user.rol}}</h5>
+                          </div>
+                          <select id="inputState" class="form-control">
+                            <option selected>Blanco</option>
+                            <option>Rojo</option>
+                            <option>Azul</option>
+                            <option>Amarillo</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>      
+</body> -->
+
+<div class="section profile-content">
+  <div class="container">
+    <div class="nav-tabs-navigation">
+      <div class="nav-tabs-wrapper">
+        <ngb-tabset [justify]="'center'">
+          <ngb-tab title="HANDS ON IPV6: ENRUTAMIENTO Y SERVICIOS">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                <div class="col-md-12">
+                  <ngb-tabset [justify]="'center'">
+                    <ngb-tab title="Usuarios Interesados ({{track1Interesadoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track1Interesados'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                                src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.interesado.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                  <option selected>Blanco</option>
+                                                  <option>Rojo</option>
+                                                  <option>Azul</option>
+                                                  <option>Amarillo</option>
+                                                </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios PreInscritos ({{track1preInscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let preTrack1 of track1preInscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!preTrack1.image">
+                              <img class="card-img-top"
+                              src="{{preTrack1.image}}"
+                                alt="Card image cap" *ngIf="preTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{preTrack1.primerApellido}}, {{preTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{preTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{preTrack1.preinscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                    <option selected>Blanco</option>
+                                                    <option>Rojo</option>
+                                                    <option>Azul</option>
+                                                    <option>Amarillo</option>
+                                                  </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios Inscritos ({{track1Inscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track1Inscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                              src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.inscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                      <option selected>Blanco</option>
+                                                      <option>Rojo</option>
+                                                      <option>Azul</option>
+                                                      <option>Amarillo</option>
+                                                    </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                  </ngb-tabset>
+
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="SEGURIDAD INFORMÁTICA">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                <div class="col-md-12">
+                  <ngb-tabset [justify]="'center'">
+                    <ngb-tab title="Usuarios Interesados ({{track2Interesadoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track2Interesados'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                              src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.interesado.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                    <option selected>Blanco</option>
+                                                    <option>Rojo</option>
+                                                    <option>Azul</option>
+                                                    <option>Amarillo</option>
+                                                  </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios PreInscritos ({{track2preInscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let preTrack1 of track2preInscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!preTrack1.image">
+                              <img class="card-img-top"
+                              src="{{preTrack1.image}}"
+                                alt="Card image cap" *ngIf="preTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{preTrack1.primerApellido}}, {{preTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{preTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{preTrack1.preinscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                      <option selected>Blanco</option>
+                                                      <option>Rojo</option>
+                                                      <option>Azul</option>
+                                                      <option>Amarillo</option>
+                                                    </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios Inscritos ({{track2Inscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track2Inscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                              src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.inscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                        <option selected>Blanco</option>
+                                                        <option>Rojo</option>
+                                                        <option>Azul</option>
+                                                        <option>Amarillo</option>
+                                                      </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                  </ngb-tabset>
+
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="GESTIÓN Y MONITOREO DE REDES">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                <div class="col-md-12">
+                  <ngb-tabset [justify]="'center'">
+                    <ngb-tab title="Usuarios Interesados ({{track3Interesadoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track3Interesados'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                              src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.interesado.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                      <option selected>Blanco</option>
+                                                      <option>Rojo</option>
+                                                      <option>Azul</option>
+                                                      <option>Amarillo</option>
+                                                    </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios PreInscritos ({{track3preInscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let preTrack1 of track3preInscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!preTrack1.image">
+                              <img class="card-img-top"
+                              src="{{preTrack1.image}}"
+                                alt="Card image cap" *ngIf="preTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{preTrack1.primerApellido}}, {{preTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{preTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{preTrack1.preinscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                        <option selected>Blanco</option>
+                                                        <option>Rojo</option>
+                                                        <option>Azul</option>
+                                                        <option>Amarillo</option>
+                                                      </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios Inscritos ({{track3Inscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track3Inscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                              src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.inscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                          <option selected>Blanco</option>
+                                                          <option>Rojo</option>
+                                                          <option>Azul</option>
+                                                          <option>Amarillo</option>
+                                                        </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                  </ngb-tabset>
+
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="INTERNET DE LAS COSAS (IOT)">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                <div class="col-md-12">
+                  <ngb-tabset [justify]="'center'">
+                    <ngb-tab title="Usuarios Interesados ({{track4Interesadoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track4Interesados'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                              src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.interesado.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                        <option selected>Blanco</option>
+                                                        <option>Rojo</option>
+                                                        <option>Azul</option>
+                                                        <option>Amarillo</option>
+                                                      </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios PreInscritos ({{track4preInscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let preTrack1 of track4preInscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!preTrack1.image">
+                              <img class="card-img-top"
+                              src="{{preTrack1.image}}"
+                                alt="Card image cap" *ngIf="preTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{preTrack1.primerApellido}}, {{preTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{preTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{preTrack1.preinscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                          <option selected>Blanco</option>
+                                                          <option>Rojo</option>
+                                                          <option>Azul</option>
+                                                          <option>Amarillo</option>
+                                                        </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios Inscritos ({{track4Inscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track4Inscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                              src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.inscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                            <option selected>Blanco</option>
+                                                            <option>Rojo</option>
+                                                            <option>Azul</option>
+                                                            <option>Amarillo</option>
+                                                          </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                  </ngb-tabset>
+
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="REDES COMUNITARIAS">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                <div class="col-md-12">
+                  <ngb-tabset [justify]="'center'">
+                    <ngb-tab title="Usuarios Interesados ({{track5Interesadoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track5Interesados'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                              src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.interesado.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                          <option selected>Blanco</option>
+                                                          <option>Rojo</option>
+                                                          <option>Azul</option>
+                                                          <option>Amarillo</option>
+                                                        </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios PreInscritos ({{track5preInscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let preTrack1 of track5preInscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!preTrack1.image">
+                              <img class="card-img-top"
+                              src="{{preTrack1.image}}"
+                                alt="Card image cap" *ngIf="preTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{preTrack1.primerApellido}}, {{preTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{preTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{preTrack1.preinscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                            <option selected>Blanco</option>
+                                                            <option>Rojo</option>
+                                                            <option>Azul</option>
+                                                            <option>Amarillo</option>
+                                                          </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios Inscritos ({{track5Inscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track5Inscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                              src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.inscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                              <option selected>Blanco</option>
+                                                              <option>Rojo</option>
+                                                              <option>Azul</option>
+                                                              <option>Amarillo</option>
+                                                            </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                  </ngb-tabset>
+
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="COMPUTACIÓN EN LA NUBE Y BIG DATA">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                <div class="col-md-12">
+                  <ngb-tabset [justify]="'center'">
+                    <ngb-tab title="Usuarios Interesados ({{track6Interesadoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track6Interesados'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                              src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.interesado.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                            <option selected>Blanco</option>
+                                                            <option>Rojo</option>
+                                                            <option>Azul</option>
+                                                            <option>Amarillo</option>
+                                                          </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios PreInscritos ({{track6preInscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let preTrack1 of track6preInscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!preTrack1.image">
+                              <img class="card-img-top"
+                              src="{{preTrack1.image}}"
+                                alt="Card image cap" *ngIf="preTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{preTrack1.primerApellido}}, {{preTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{preTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{preTrack1.preinscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                              <option selected>Blanco</option>
+                                                              <option>Rojo</option>
+                                                              <option>Azul</option>
+                                                              <option>Amarillo</option>
+                                                            </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Usuarios Inscritos ({{track6Inscritoslength}})">
+                      <ng-template ngbTabContent>
+                        <div class="row" id="follows">
+                          <div class="col-md-4" *ngFor='let intTrack1 of track6Inscritos'>
+                            <div class="card">
+                              <img class="card-img-top"
+                                src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                                alt="Card image cap" *ngIf="!intTrack1.image">
+                              <img class="card-img-top"
+                              src="{{intTrack1.image}}"
+                                alt="Card image cap" *ngIf="intTrack1.image">
+                              <div class="card-body">
+                                <h5 class="card-title"><strong style="font-weight: bold">
+                                    Nombre:</strong>{{intTrack1.primerApellido}}, {{intTrack1.primerNombre}} </h5>
+                                <p class="card-text"><strong style="font-weight: bold">Email:</strong>
+                                  {{intTrack1.emailPersonal}}</p>
+                                <p class="card-text">{{intTrack1.inscrito.titulo}}</p>
+                                <!-- <select id="inputState" class="form-control">
+                                                                <option selected>Blanco</option>
+                                                                <option>Rojo</option>
+                                                                <option>Azul</option>
+                                                                <option>Amarillo</option>
+                                                              </select> -->
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button data-toggle="modal" data-target="#interesado" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button data-toggle="modal" data-target="#inscribir" class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                  </ngb-tabset>
+
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+
+        </ngb-tabset>
+      </div>
+    </div>
+  </div>
+</div>

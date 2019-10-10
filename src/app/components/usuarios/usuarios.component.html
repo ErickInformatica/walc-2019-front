@@ -1,0 +1,1333 @@
+<!-- <body style="margin-top:10%;">
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+        aria-controls="nav-home" aria-selected="true">No registrados</a>
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+        aria-controls="nav-profile" aria-selected="false">Pre-Registrados</a>
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+        aria-controls="nav-contact" aria-selected="false">Registrados</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="row justify-content-md-center">
+        <div class="col-md-9">
+          <div class="container" *ngFor='let user of users'>
+            <div class="display">
+              <div class="display-item">
+                <div class="card seamus">
+                  <div class="card-top"></div>
+                  <div class="card-profile">
+                    <div class="profile-image">
+                      <img class="mb-4"
+                        src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png" alt="">
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <div class="info-title">
+                      <h2>{{user.nombre}}</h2>
+                      <h6>{{user.email}}</h6>
+                      <h5>{{user.rol}}</h5>
+                    </div>
+                    <select id="inputState" class="form-control">
+                      <option selected>Blanco</option>
+                      <option>Rojo</option>
+                      <option>Azul</option>
+                      <option>Amarillo</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <div class="row">
+        <div class="col-md-7" *ngFor='let user of users'>
+          <div class="container">
+            <div class="display">
+              <div class="display-item">
+                <div class="card seamus">
+                  <div class="card-top"></div>
+                  <div class="card-profile">
+                    <div class="profile-image">
+                      <img class="mb-4"
+                        src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png" alt="">
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <div class="info-title">
+                      <h2>{{user.nombre}}</h2>
+                      <h6>{{user.email}}</h6>
+                      <h5>{{user.rol}}</h5>
+                    </div>
+                    <select id="inputState" class="form-control">
+                      <option selected>Blanco</option>
+                      <option>Rojo</option>
+                      <option>Azul</option>
+                      <option>Amarillo</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+      <div class="row">
+        <div class="col-md-7" *ngFor='let user of users'>
+          <div class="container">
+            <div class="display">
+              <div class="display-item">
+                <div class="card seamus">
+                  <div class="card-top"></div>
+                  <div class="card-profile">
+                    <div class="profile-image">
+                      <img class="mb-4"
+                        src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png" alt="">
+                    </div>
+                  </div>
+                  <div class="card-info">
+                    <div class="info-title">
+                      <h2>{{user.nombre}}</h2>
+                      <h6>{{user.email}}</h6>
+                      <h5>{{user.rol}}</h5>
+                    </div>
+                    <select id="inputState" class="form-control">
+                      <option selected>Blanco</option>
+                      <option>Rojo</option>
+                      <option>Azul</option>
+                      <option>Amarillo</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body> -->
+<table class="table" #TABLE style="display: none">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Primer Nombre</th>
+      <th scope="col">Segundo Nombre</th>
+      <th scope="col">Primer Apellido</th>
+      <th scope="col">Segundo Apellido</th>
+      <th scope="col">Monto</th>
+      <th scope="col">Email Personal</th>
+      <th scope="col">Track</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">País Nacimiento</th>
+      <th scope="col">Ciudad Nacimiento</th>
+      <th scope="col">Fecha Nacimiento</th>
+      <th scope="col">Tipo Documento Identidad</th>
+      <th scope="col">Numero Documento Identidad</th>
+      <th scope="col">Direccion Habitacion</th>
+      <th scope="col">Telefono Habitacion</th>
+      <th scope="col">Celular Personal</th>
+      <th scope="col">Email Institucional</th>
+      <th scope="col">Preferencia Alimentaria</th>
+      <th scope="col">Descripcion Alimentaria</th>
+      <th scope="col">Alergia</th>
+      <th scope="col">Descripcion Alergia</th>
+      <th scope="col">Tipo Organizacion</th>
+      <th scope="col">Nombre Organizacion</th>
+      <th scope="col">Direccion Organizacion</th>
+      <th scope="col">Telefono Organizacion</th>
+      <th scope="col">Cargo Organizacion</th>
+      <th scope="col">Periodo Cargo Organizacion</th>
+      <th scope="col">Responsabilidades Organizacion</th>
+      <th scope="col">Grado AlcanzadoEduacion</th>
+      <th scope="col">Expectativa Taller</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of usersExcel">
+      <td>{{user.primerNombre}}</td>
+      <td>{{user.segundoNombre}}</td>
+      <td>{{user.primerApellido}}</td>
+      <td>{{user.segundoApellido}}</td>
+      <td>{{user.saldo}}</td>
+      <td>{{user.emailPersonal}}</td>
+      <td>{{user.interesado.titulo}}</td>
+      <td>{{user.sexo}}</td>
+      <td>{{user.paisNacimiento}}</td>
+      <td>{{user.ciudadNacimiento}}</td>
+      <td>{{user.fechaNacimiento}}</td>
+      <td>{{user.tipoDocumentoIdentidad}}</td>
+      <td>{{user.numeroDocumentoIdentidad}}</td>
+      <td>{{user.direccionHabitacion}}</td>
+      <td>{{user.telefonoHabitacion}}</td>
+      <td>{{user.celularPersonal}}</td>
+      <td>{{user.emailInstitucional}}</td>
+      <td>{{user.preferenciaAlimentaria}}</td>
+      <td>{{user.descripcionAlimentaria}}</td>
+      <td>{{user.alergia}}</td>
+      <td>{{user.descripcionAlergia}}</td>
+      <td>{{user.tipoOrganizacion}}</td>
+      <td>{{user.nombreOrganizacion}}</td>
+      <td>{{user.direccionOrganizacion}}</td>
+      <td>{{user.telefonoOrganizacion}}</td>
+      <td>{{user.cargoOrganizacion}}</td>
+      <td>{{user.periodoCargoOrganizacion}}</td>
+      <td>{{user.responsabilidadesOrganizacion}}</td>
+      <td>{{user.gradoAlcanzadoEduacion}}</td>
+      <td>{{user.expectativaTaller}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<div class="section profile-content">
+  <button class="btn btn-success btn-lg" (click)="exportAsXLSX()"><i class="fa fa-file-excel-o"
+      style="font-size:15px"></i></button>
+  <div class="container">
+    <div class="nav-tabs-navigation">
+      <div class="nav-tabs-wrapper">
+        <ngb-tabset [justify]="'center'">
+          <ngb-tab title="Usuarios Interesados">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                <!-- <input type="text" class="form-control" (keyup)="onKeyInteresados($event)"
+                  placeholder="Buscar Por Primer Nombre"> -->
+                <input type="text" class="form-control" id='txt_searchall' placeholder="Buscador" (keyup)="searchInteresados($event)">
+                <div class="col-md-12">
+                  <!-- <div class="card">
+                    <div class="card-header">
+                      <div class="float-right">
+                        <button type="button" (click)="getUser(int._id)" data-toggle="modal"
+                          data-target="#editarUsuario" class="btn btn-info btn-just-icon"
+                          style="background-color: #e7cf26; border-color: #e7cf26"><i class="far fa-edit"></i></button>
+                      </div>
+                    </div>
+                    <img class="card-img-top"
+                      src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                      alt="Card image cap" *ngIf="!int.image">
+                    <img class="card-img-top" src="{{int.image}}" alt="Card image cap" *ngIf="int.image">
+                    <div class="card-body">
+                      <h5 class="card-title"><strong style="font-weight: bold"> Nombre:</strong>{{int.primerApellido}},
+                        {{int.primerNombre}} </h5>
+                      <p class="card-text"><strong style="font-weight: bold">Email:</strong> {{int.emailPersonal}}</p>
+                      <p class="card-text">{{int.interesado.titulo}}</p>
+                     
+                      <div class="input-group mb-3">
+                        <label for="exampleInputEmail1" style="font-weight: bold"> Monto <br> Pagado</label>
+                        <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Monto Pagado"
+                          aria-label="Recipient's username" aria-describedby="basic-addon2" name="saldo"
+                          #saldo="ngModel" [(ngModel)]="int.saldo" #saldos>
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-dark" (click)="editSaldo(int._id,saldos.value)"
+                            style="color: #e7cf26; border-color: #e7cf26" type="button"><i class="fa fa-paper-plane-o"
+                              style="font-size: 20px"></i></button>
+                        </div>
+                      </div>
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                        <button (click)="getUser(int._id)" data-toggle="modal" data-target="#preInscribir"
+                          class="btn btn-outline-dark"
+                          style="color: #e7cf26; border-color: #e7cf26">PreInscribir</button>
+                       
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="table-responsive">
+                    <table id="tableInt" class="table">
+                      <thead class="thead-dark">
+                        <tr class="myHeadInt">
+                          <th scope="col">#</th>
+                          <th scope="col">Nombres</th>
+                          <th scope="col">Apellidos</th>
+                          <th scope="col">Monto</th>
+                          <th scope="col">Email Personal</th>
+                          <th scope="col">Track</th>
+                          <th scope="col">Sexo</th>
+                          <th scope="col">Celular Personal</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor='let int of usersInteresados; index as i'>
+                          <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                              <button type="button" (click)="getUser(int._id)" data-toggle="modal"
+                                data-target="#editarUsuario" class="btn btn-info btn-just-icon"
+                                style="background-color: #e7cf26; border-color: #e7cf26"><i
+                                  class="far fa-edit"></i></button>
+                              <button (click)="getUser(int._id)" data-toggle="modal" data-target="#preInscribir"
+                                class="btn btn-outline-dark"
+                                style="color: #e7cf26; border-color: #e7cf26">PreInscribir</button>
+                            </div>
+
+                            <!-- <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input class="form-check-input" [(ngModel)]="isChecked" (change)="checkValue(isChecked?'A':'B')" type="checkbox" value="">
+                                      Monto
+                                      <span class="form-check-sign"></span>
+                                    </label>
+                                   </div> -->
+
+                          </td>
+                          <td>{{int.primerNombre}} {{int.segundoNombre}}</td>
+                          <td>{{int.primerApellido}} {{int.segundoApellido}}</td>
+
+                          <td>
+                            <div class="input-group mb-3" style="width: 200px">
+                              <input type="number" class="form-control" id="exampleInputEmail1"
+                                placeholder="Monto Pagado" aria-label="Recipient's username"
+                                aria-describedby="basic-addon2" name="saldo" #saldo="ngModel" [(ngModel)]="int.saldo"
+                                #saldos>
+                              <div class="input-group-append">
+                                <button class="btn btn-outline-dark" (click)="editSaldo(int._id,saldos.value)"
+                                  style="color: #e7cf26; border-color: #e7cf26" type="button"><i
+                                    class="fa fa-paper-plane-o" style="font-size: 20px"></i></button>
+                              </div>
+                            </div>
+                          </td>
+                          <td>{{int.emailPersonal}}</td>
+                          <td>{{int.interesado.titulo}}</td>
+                          <td>{{int.sexo}}</td>
+                          <td>{{int.celularPersonal}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Usuarios PreInscritos">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                  <input type="text" class="form-control" id='txt_searchallPre' placeholder="Buscador" (keyup)="searchPreInscritos($event)">
+                <div class="col-md-12">
+                  <!-- <div class="card">
+                    <div class="card-header">
+                      <div class="float-right">
+                        <button type="button" (click)="getUser(pre._id)" data-toggle="modal"
+                          data-target="#editarUsuario" class="btn btn-info btn-just-icon"
+                          style="background-color: #e7cf26; border-color: #e7cf26"><i class="far fa-edit"></i></button>
+                      </div>
+                    </div>
+                    <img class="card-img-top"
+                      src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                      alt="Card image cap" *ngIf="!pre.image">
+                    <img class="card-img-top" src="{{pre.image}}" alt="Card image cap" *ngIf="pre.image">
+                    <div class="card-body">
+                      <h5 class="card-title"><strong style="font-weight: bold"> Nombre:</strong>{{pre.primerApellido}},
+                        {{pre.primerNombre}} </h5>
+                      <p class="card-text"><strong style="font-weight: bold">Email:</strong> {{pre.emailPersonal}}</p>
+                      <p class="card-text">{{pre.preinscrito.titulo}}</p>
+                      
+                      <div class="input-group mb-3">
+                        <label for="exampleInputEmail1" style="font-weight: bold"> Monto <br> Pagado</label>
+                        <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Monto Pagado"
+                          aria-label="Recipient's username" aria-describedby="basic-addon2" name="saldo"
+                          #saldo="ngModel" [(ngModel)]="pre.saldo" #saldos>
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-dark" (click)="editSaldo(pre._id,saldos.value)"
+                            style="color: #e7cf26; border-color: #e7cf26" type="button"><i class="fa fa-paper-plane-o"
+                              style="font-size: 20px"></i></button>
+                        </div>
+                      </div>
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                        <button (click)="getUser(pre._id)" data-toggle="modal" data-target="#interesado"
+                          class="btn btn-outline-dark" style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                        <button (click)="getUser(pre._id)" data-toggle="modal" data-target="#inscribir"
+                          class="btn btn-outline-dark" style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="table-responsive">
+                    <table id="tablePre" class="table">
+                        <thead class="thead-dark">
+                            <tr class="myHeadPre">
+                              <th scope="col">#</th>
+                              <th scope="col">Nombres</th>
+                              <th scope="col">Apellidos</th>
+                              <th scope="col">Monto</th>
+                              <th scope="col">Email Personal</th>
+                              <th scope="col">Track</th>
+                              <th scope="col">Sexo</th>
+                              <th scope="col">Celular Personal</th>
+                            </tr>
+                          </thead>
+                      <tbody>
+                        <tr *ngFor='let int of userPreInscritos; index as i'>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                  <button type="button" (click)="getUser(int._id)" data-toggle="modal"
+                                    data-target="#editarUsuario" class="btn btn-info btn-just-icon"
+                                    style="background-color: #e7cf26; border-color: #e7cf26"><i
+                                      class="far fa-edit"></i></button>
+                                      <button (click)="getUser(int._id)" data-toggle="modal" data-target="#interesado"
+                                      class="btn btn-outline-dark" style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                    <button (click)="getUser(int._id)" data-toggle="modal" data-target="#inscribir"
+                                      class="btn btn-outline-dark" style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+                                </div>    
+                              </td>
+                              <td>{{int.primerNombre}} {{int.segundoNombre}}</td>
+                              <td>{{int.primerApellido}} {{int.segundoApellido}}</td>
+    
+                              <td>
+                                <div class="input-group mb-3" style="width: 200px">
+                                  <input type="number" class="form-control" id="exampleInputEmail1"
+                                    placeholder="Monto Pagado" aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2" name="saldo" #saldo="ngModel" [(ngModel)]="int.saldo"
+                                    #saldos>
+                                  <div class="input-group-append">
+                                    <button class="btn btn-outline-dark" (click)="editSaldo(int._id,saldos.value)"
+                                      style="color: #e7cf26; border-color: #e7cf26" type="button"><i
+                                        class="fa fa-paper-plane-o" style="font-size: 20px"></i></button>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>{{int.emailPersonal}}</td>
+                              <td>{{int.preinscrito.titulo}}</td>
+                              <td>{{int.sexo}}</td>
+                              <td>{{int.celularPersonal}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Usuarios Inscritos">
+            <ng-template ngbTabContent>
+              <div class="row" id="follows">
+                  <input type="text" class="form-control" id='txt_searchallIns' placeholder="Buscador" (keyup)="searchInscritos($event)">
+                <div class="col-md-12">
+                  <!-- <div class="card">
+                    <div class="card-header">
+                      <div class="float-right">
+                        <button type="button" (click)="getUser(ins._id)" data-toggle="modal"
+                          data-target="#editarUsuario" class="btn btn-info btn-just-icon"
+                          style="background-color: #e7cf26; border-color: #e7cf26"><i class="far fa-edit"></i></button>
+                      </div>
+                    </div>
+                    <img class="card-img-top"
+                      src="https://www.edmontoncorporatechallenge.com/Sports%20Icons/unknown-challenge.png"
+                      alt="Card image cap" *ngIf="!ins.image">
+                    <img class="card-img-top" src="{{ins.image}}" alt="Card image cap" *ngIf="ins.image">
+                    <div class="card-body">
+                      <h5 class="card-title"><strong style="font-weight: bold"> Nombre:</strong>{{ins.primerApellido}},
+                        {{ins.primerNombre}} </h5>
+                      <p class="card-text"><strong style="font-weight: bold">Email:</strong> {{ins.emailPersonal}}</p>
+                      <p class="card-text">{{ins.inscrito.titulo}}</p>
+                      
+                      <div class="input-group mb-3">
+                        <label for="exampleInputEmail1" style="font-weight: bold"> Monto <br> Pagado</label>
+                        <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Monto Pagado"
+                          aria-label="Recipient's username" aria-describedby="basic-addon2" name="saldo"
+                          #saldo="ngModel" [(ngModel)]="ins.saldo" #saldos>
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-dark" (click)="editSaldo(ins._id,saldos.value)"
+                            style="color: #e7cf26; border-color: #e7cf26" type="button"><i class="fa fa-paper-plane-o"
+                              style="font-size: 20px"></i></button>
+                        </div>
+                      </div>
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                        <button (click)="getUser(ins._id)" data-toggle="modal" data-target="#interesado"
+                          class="btn btn-outline-dark" style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                        <button (click)="getUser(ins._id)" data-toggle="modal" data-target="#preInscribir"
+                          class="btn btn-outline-dark"
+                          style="color: #e7cf26; border-color: #e7cf26">PreInscribir</button>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="table-responsive">
+                      <table id="tableIns" class="table">
+                        <thead class="thead-dark">
+                          <tr class="myHeadIns">
+                            <th scope="col">#</th>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Monto</th>
+                            <th scope="col">Email Personal</th>
+                            <th scope="col">Track</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Celular Personal</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor='let int of usersInscritos; index as i'>
+                            <td>
+                              <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" (click)="getUser(int._id)" data-toggle="modal"
+                                  data-target="#editarUsuario" class="btn btn-info btn-just-icon"
+                                  style="background-color: #e7cf26; border-color: #e7cf26"><i
+                                    class="far fa-edit"></i></button>
+                                    <button (click)="getUser(int._id)" data-toggle="modal" data-target="#interesadoModal"
+                                    class="btn btn-outline-dark" style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+                                  <button (click)="getUser(int._id)" data-toggle="modal" data-target="#preInscribir"
+                                    class="btn btn-outline-dark"
+                                    style="color: #e7cf26; border-color: #e7cf26">PreInscribir</button>
+                              </div>
+  
+                              <!-- <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input class="form-check-input" [(ngModel)]="isChecked" (change)="checkValue(isChecked?'A':'B')" type="checkbox" value="">
+                                        Monto
+                                        <span class="form-check-sign"></span>
+                                      </label>
+                                     </div> -->
+  
+                            </td>
+                            <td>{{int.primerNombre}} {{int.segundoNombre}}</td>
+                            <td>{{int.primerApellido}} {{int.segundoApellido}}</td>
+  
+                            <td>
+                              <div class="input-group mb-3" style="width: 200px">
+                                <input type="number" class="form-control" id="exampleInputEmail1"
+                                  placeholder="Monto Pagado" aria-label="Recipient's username"
+                                  aria-describedby="basic-addon2" name="saldo" #saldo="ngModel" [(ngModel)]="int.saldo"
+                                  #saldos>
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-dark" (click)="editSaldo(int._id,saldos.value)"
+                                    style="color: #e7cf26; border-color: #e7cf26" type="button"><i
+                                      class="fa fa-paper-plane-o" style="font-size: 20px"></i></button>
+                                </div>
+                              </div>
+                            </td>
+                            <td>{{int.emailPersonal}}</td>
+                            <td>{{int.inscrito.titulo}}</td>
+                            <td>{{int.sexo}}</td>
+                            <td>{{int.celularPersonal}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Editar Usuario -->
+<div class="modal" id="editarUsuario" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">¿Quiere editar los datos del usuario: {{userEdit.primerNombre}}?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+            style="background-color:black">
+            <div class="lh-100">
+              <h6 class="mb-0 text-white lh-100">DATOS DEL PARTICIPANTE</h6>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <!-- Imagen -->
+              <!-- <div class="form-group col-md-6">
+                <div class="image-upload">
+                  <input class="btn btn-outline-secondary" style="color: black" name="imageUrl" type="file"
+                    accept="image/*" (change)="handleInputChange($event)" />
+                </div>
+              </div> -->
+              <!-- primerApellido -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="primerApellido" class="control-label required">Primer Apellido</label>
+                  <input type="text" class="form-control" id="primerApellido" placeholder="Primer Apellido"
+                    name="primerApellido" [(ngModel)]="userEdit.primerApellido" required>
+
+                </div>
+              </div>
+              <!-- segundoApellido -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="segundoApellido" class="control-label">Segundo Apellido</label>
+                  <input type="text" class="form-control" id="segundoApellido" placeholder="Segundo Apellido"
+                    name="segundoApellido" [(ngModel)]="userEdit.segundoApellido" required>
+                </div>
+              </div>
+              <!-- Primer Nombre -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="primerNombre" class="control-label required">Primer Nombre</label>
+                  <input type="text" class="form-control" id="primerNombre" placeholder="Primer Nombre"
+                    name="primerNombre" [(ngModel)]="userEdit.primerNombre" required>
+
+                </div>
+              </div>
+              <!-- Segundo Nombre -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="segundoNombre" class="control-label">Segundo Nombre</label>
+                  <input type="text" class="form-control" id="segundoNombre" placeholder="Segundo Nombre"
+                    name="segundoNombre" [(ngModel)]="userEdit.segundoNombre" required>
+                </div>
+              </div>
+              <!-- sexo -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="sexo" class="control-label required">Sexo</label>
+                  <select class="form-control" id="exampleFormControlSelect1" id="sexo" placeholder="Sexo" name="sexo"
+                    [(ngModel)]="userEdit.sexo" required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                  </select>
+
+                </div>
+              </div>
+              <!-- paisNacimiento -->
+              <div class="form-group col-md-6 ">
+                <div class="col-12">
+                  <label for="paisNacimiento" class="control-label required">País Nacimiento</label>
+                  <input type="text" class="form-control" id="paisNacimiento" name="paisNacimiento"
+                    [(ngModel)]="userEdit.paisNacimiento" required>
+
+
+                </div>
+              </div>
+              <!-- Ciudad de Nacimiento -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="ciudadNacimiento" class="control-label required">Ciudad de Nacimiento</label>
+                  <input type="text" class="form-control" id="ciudadNacimiento" placeholder="Ciudad de Nacimiento"
+                    name="ciudadNacimiento" [(ngModel)]="userEdit.ciudadNacimiento" required>
+
+                </div>
+              </div>
+              <!-- Fecha de Nacimiento -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="fechaNacimiento" class="control-label required">Fecha de Nacimiento (yyyy-mm-dd)</label>
+                  <input type="text" class="form-control" id="fechaNacimiento" placeholder="yyyy-mm-dd"
+                    name="fechaNacimiento" [(ngModel)]="userEdit.fechaNacimiento" required>
+
+                </div>
+              </div>
+              <!-- País de Nacionalidad -->
+              <div class="form-group col-md-6 ">
+                <div class="col-12">
+                  <label for="paisNacionalidad" class="control-label required">País de Nacionalidad</label>
+                  <input type="text" class="form-control" id="paisNacionalidad" name="paisNacionalidad"
+                    [(ngModel)]="userEdit.paisNacionalidad" required>
+
+
+                </div>
+              </div>
+              <!-- Tipo de Documento de Identidad -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="tipoDocumentoIdentidad" class="control-label required">Tipo de Documento de
+                    Identidad</label>
+                  <select class="form-control" id="exampleFormControlSelect1" id="tipoDocumentoIdentidad"
+                    placeholder="Tipo de Documento de Identidad" name="tipoDocumentoIdentidad"
+                    [(ngModel)]="userEdit.tipoDocumentoIdentidad" required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="Cedula">Cédula</option>
+                    <option value="DNI">DNI</option>
+                    <option value="ID Card">ID Card</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="Carta de Identidad">Carta de Identidad</option>
+                    <option value="DUI">DUI</option>
+                    <option value="DPI">DPI</option>
+                    <option value="Otro">Otro</option>
+                  </select>
+
+                </div>
+              </div>
+              <!-- Número de Documento de Identidad -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="numeroDocumentoIdentidad" class="control-label required">Número de Documento de
+                    Identidad</label>
+                  <input type="text" class="form-control" id="numeroDocumentoIdentidad"
+                    placeholder="Número de Documento de Identidad" name="numeroDocumentoIdentidad"
+                    [(ngModel)]="userEdit.numeroDocumentoIdentidad" required>
+
+                </div>
+              </div>
+              <!-- Dirección de Habitación -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="direccionHabitacion" class="control-label required">Dirección de Habitación</label>
+                  <input type="text" class="form-control" id="direccionHabitacion"
+                    placeholder="Número de Documento de Identidad" name="direccionHabitacion"
+                    [(ngModel)]="userEdit.direccionHabitacion" required>
+
+                </div>
+              </div>
+              <!-- Teléfono de Habitación (código de país, de área y número) -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="telefonoHabitacion" class="control-label">Teléfono de Habitación (código de país, de
+                    área y número)</label>
+                  <input type="text" class="form-control" id="telefonoHabitacion" placeholder="Teléfono de Habitación"
+                    name="telefonoHabitacion" [(ngModel)]="userEdit.telefonoHabitacion" required>
+                </div>
+              </div>
+              <!-- Celular Personal (código de país, de operadora y número)  -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="celularPersonal" class="control-label required">Celular Personal (código de país, de
+                    operadora y número) </label>
+                  <input type="text" class="form-control" id="celularPersonal" placeholder="Celular Personal"
+                    name="celularPersonal" [(ngModel)]="userEdit.celularPersonal" required>
+
+                </div>
+              </div>
+              <!-- Email Institucional (esta dirección electrónica debe ser diferente a la anterior)  -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="emailInstitucional" class="control-label required">Email Institucional (esta
+                    dirección electrónica debe ser diferente a la anterior)</label>
+                  <input type="email" class="form-control" id="emailInstitucional" placeholder="Email Institucional"
+                    name="emailInstitucional" [(ngModel)]="userEdit.emailInstitucional" required>
+
+                </div>
+              </div>
+              <!-- ¿Tiene Usted alguna preferencia alimentaria? -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="preferenciaAlimentaria" class="control-label">¿Tiene Usted alguna preferencia
+                    alimentaria?</label>
+                  <select class="form-control" id="exampleFormControlSelect1" id="preferenciaAlimentaria"
+                    placeholder="Preferencia Alimentaria" name="preferenciaAlimentaria"
+                    [(ngModel)]="userEdit.preferenciaAlimentaria" #preferenciaAlimentaria required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Describa/Especifique su preferencia alimentaria -->
+              <div class="form-group col-md-6" *ngIf="preferenciaAlimentaria.value == 'Si'">
+                <div class="col-12">
+                  <label for="descripcionAlimentaria" class="control-label">Describa/Especifique su preferencia
+                    alimentaria</label>
+                  <textarea type="text" class="form-control" id="descripcionAlimentaria"
+                    placeholder="Descripcion Alimentaria" name="descripcionAlimentaria"
+                    [(ngModel)]="userEdit.descripcionAlimentaria" required></textarea>
+                </div>
+              </div>
+              <!-- ¿Es Usted alérgico a algún medicamento o a algún alimento? -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="alergia" class="control-label">¿Es Usted alérgico a algún medicamento o a algún
+                    alimento?</label>
+                  <select class="form-control" id="alergia" id="alergia" placeholder="Alergia" name="alergia"
+                    [(ngModel)]="userEdit.alergia" #alergia required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Describa/Especifique su alergia -->
+              <div class="form-group col-md-6" *ngIf="alergia.value == 'Si'">
+                <div class="col-12">
+                  <label for="descripcionAlergia" class="control-label">Describa/Especifique su alergia</label>
+                  <textarea type="text" class="form-control" id="descripcionAlergia" placeholder="Descripcion Alergia"
+                    name="descripcionAlergia" [(ngModel)]="userEdit.descripcionAlergia" required></textarea>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="card">
+          <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+            style="background-color:black">
+            <div class="lh-100">
+              <h6 class="mb-0 text-white lh-100">ORGANIZACIÓN O EMPRESA A LA QUE PERTENECE</h6>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <!-- Tipo de Organización  -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="tipoOrganizacion" class="control-label required">Tipo de Organización</label>
+                  <select class="form-control" id="tipoOrganizacion" placeholder="Tipo de Organización "
+                    name="tipoOrganizacion" [(ngModel)]="userEdit.tipoOrganizacion" required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="Académica">Académica</option>
+                    <option value="Pública">Pública</option>
+                    <option value="Privada">Privada</option>
+                    <option value="Gubernamental">Gubernamental</option>
+                    <option value="ONG">ONG</option>
+                    <option value="Humanitaria">Humanitaria</option>
+                    <option value="Militar">Militar</option>
+                    <option value="Sin Fines de Lucro">Sin Fines de Lucro</option>
+                  </select>
+
+                </div>
+              </div>
+              <!-- Nombre Organización -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="nombreOrganizacion" class="control-label required">Nombre Organización</label>
+                  <input type="text" class="form-control" id="nombreOrganizacion" placeholder="Nombre Organizacion"
+                    name="nombreOrganizacion" [(ngModel)]="userEdit.nombreOrganizacion" required>
+
+                </div>
+              </div>
+              <!-- Siglas de la Institución -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="siglasOrganizacion" class="control-label">Siglas de la Institución</label>
+                  <input type="text" class="form-control" id="siglasOrganizacion" placeholder="Siglas de la Institución"
+                    name="siglasOrganizacion" [(ngModel)]="userEdit.siglasOrganizacion" required>
+                </div>
+              </div>
+              <!-- URL -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="urlOrganizacion" class="control-label">URL</label>
+                  <input type="text" class="form-control" id="urlOrganizacion" placeholder="URL" name="urlOrganizacion"
+                    [(ngModel)]="userEdit.urlOrganizacion" required>
+                </div>
+              </div>
+              <!-- Dirección Organización -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="direccionOrganizacion" class="control-label required">Dirección Organización</label>
+                  <input type="text" class="form-control" id="direccionOrganizacion"
+                    placeholder="Dirección Organización" name="direccionOrganizacion"
+                    [(ngModel)]="userEdit.direccionOrganizacion" required>
+
+                </div>
+              </div>
+              <!-- Ciudad Organización -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="ciudadOrganizacion" class="control-label required">Ciudad Organización</label>
+                  <input type="text" class="form-control" id="ciudadOrganizacion" placeholder="Ciudad Organización"
+                    name="ciudadOrganizacion" [(ngModel)]="userEdit.ciudadOrganizacion" required>
+
+                </div>
+              </div>
+              <!-- País Organización -->
+              <div class="form-group col-md-6 ">
+                <div class="col-12">
+                  <label for="paisOrganizacion" class="control-label required">País Organización</label>
+                  <input type="text" class="form-control" id="paisOrganizacion" name="paisOrganizacion"
+                    [(ngModel)]="userEdit.paisOrganizacion" required>
+
+
+                </div>
+              </div>
+              <!-- Teléfono de Organización (código de país, de área y número) -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="telefonoOrganizacion" class="control-label required">Teléfono de Organización
+                    (código de país, de área y número)</label>
+                  <input type="text" class="form-control" id="telefonoOrganizacion" placeholder="Teléfono de Habitación"
+                    name="telefonoOrganizacion" [(ngModel)]="userEdit.telefonoOrganizacion" required>
+                </div>
+
+              </div>
+              <!-- Fax Organización (código de país, de operadora y número)  -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="faxOrganizacion" class="control-label required">Fax Organización (código de país, de
+                    operadora y número) </label>
+                  <input type="text" class="form-control" id="faxOrganizacion" placeholder="Fax Organización"
+                    name="faxOrganizacion" [(ngModel)]="userEdit.faxOrganizacion" required>
+
+                </div>
+              </div>
+              <!-- Cargo que ocupa -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="cargoOrganizacion" class="control-label required">Cargo que ocupa</label>
+                  <input type="text" class="form-control" id="cargoOrganizacion"
+                    placeholder="Número de Documento de Identidad" name="cargoOrganizacion"
+                    [(ngModel)]="userEdit.cargoOrganizacion" required>
+
+                </div>
+              </div>
+              <!-- Período en el cargo -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="periodoCargoOrganizacion" class="control-label">Período en el cargo</label>
+                  <select class="form-control" id="periodoCargoOrganizacion" id="periodoCargoOrganizacion"
+                    placeholder="Período en el cargo" name="periodoCargoOrganizacion"
+                    [(ngModel)]="userEdit.periodoCargoOrganizacion" required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="1 año">1 año</option>
+                    <option value="2 años">2 años</option>
+                    <option value="3 años">3 años</option>
+                    <option value="4 años">4 años</option>
+                    <option value="5 años">5 años</option>
+                    <option value="6 años">6 años</option>
+                    <option value="7 años">7 años</option>
+                    <option value="8 años">8 años</option>
+                    <option value="9 años">9 años</option>
+                    <option value="10 años">10 años</option>
+                    <option value="11 años">11 años</option>
+                    <option value="12 años">12 años</option>
+                    <option value="13 años">13 años</option>
+                    <option value="14 años">14 años</option>
+                    <option value="15 años">15 años</option>
+                    <option value="16 años">16 años</option>
+                    <option value="17 años">17 años</option>
+                    <option value="18 años">18 años</option>
+                    <option value="19 años">19 años</option>
+                    <option value="20 años">20 años</option>
+                    <option value="Más de 20 años">Más de 20 años</option>
+                  </select>
+
+                </div>
+              </div>
+              <!-- Responsabilidades -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="responsabilidadesOrganizacion" class="control-label required">Responsabilidades</label>
+                  <textarea type="text" class="form-control" id="responsabilidadesOrganizacion"
+                    placeholder="Responsabilidades" name="responsabilidadesOrganizacion"
+                    [(ngModel)]="userEdit.responsabilidadesOrganizacion" required></textarea>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+            style="background-color:black">
+            <div class="lh-100">
+              <h6 class="mb-0 text-white lh-100">EDUCACIÓN</h6>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <!-- Institución  -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="institucionEduacion" class="control-label required">Institución</label>
+                  <input type="text" class="form-control" id="institucionEduacion" placeholder="Institución"
+                    name="institucionEduacion" [(ngModel)]="userEdit.institucionEduacion" required>
+
+                </div>
+              </div>
+              <!-- Período de estudio -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="periodoEstudioEduacion" class="control-label">Período de estudio</label>
+                  <select class="form-control" id="periodoEstudioEduacion" id="periodoEstudioEduacion"
+                    placeholder="Período de estudio" name="periodoEstudioEduacion"
+                    [(ngModel)]="userEdit.periodoEstudioEduacion" required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="1 año">1 año</option>
+                    <option value="2 años">2 años</option>
+                    <option value="3 años">3 años</option>
+                    <option value="4 años">4 años</option>
+                    <option value="5 años">5 años</option>
+                    <option value="6 años">6 años</option>
+                    <option value="7 años">7 años</option>
+                    <option value="8 años">8 años</option>
+                    <option value="9 años">9 años</option>
+                    <option value="10 años">10 años</option>
+                    <option value="10 años o más">10 años o más</option>
+                  </select>
+
+                </div>
+              </div>
+              <!-- Desde -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="desdeEduacion" class="control-label">Desde</label>
+                  <input type="text" class="form-control" id="desdeEduacion" placeholder="Desde" name="desdeEduacion"
+                    [(ngModel)]="userEdit.desdeEduacion" required>
+                </div>
+              </div>
+              <!-- Hasta -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="hastaEducacion" class="control-label">Hasta</label>
+                  <input type="text" class="form-control" id="hastaEducacion" placeholder="Hasta" name="hastaEducacion"
+                    [(ngModel)]="userEdit.hastaEducacion" required>
+                </div>
+              </div>
+              <!-- Ciudad de Educación -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="ciudadEduacion" class="control-label required">Ciudad de Educación</label>
+                  <input type="text" class="form-control" id="ciudadEduacion" placeholder="Ciudad de Educación"
+                    name="ciudadEduacion" [(ngModel)]="userEdit.ciudadEduacion" required>
+
+                </div>
+              </div>
+              <!-- País Educación -->
+              <div class="form-group col-md-6 ">
+                <div class="col-12">
+                  <label for="paisEduacion" class="control-label required">País Educación</label>
+                  <input type="text" class="form-control" id="paisEduacion" name="paisEduacion"
+                    [(ngModel)]="userEdit.paisEduacion" required>
+
+
+                </div>
+              </div>
+              <!-- Grado Alcanzado  -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="gradoAlcanzadoEduacion" class="control-label required">Grado Alcanzado</label>
+                  <select class="form-control" id="gradoAlcanzadoEduacion" placeholder="Grado Alcanzado "
+                    name="gradoAlcanzadoEduacion" [(ngModel)]="userEdit.gradoAlcanzadoEduacion" required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="Técnico Superior Universitario">Técnico Superior Universitario</option>
+                    <option value="Licenciado">Licenciado</option>
+                    <option value="Ingeniero">Ingeniero</option>
+                    <option value="Especialista">Especialista</option>
+                    <option value="Magister">Magister</option>
+                    <option value="Doctor">Doctor</option>
+                  </select>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+            style="background-color:black">
+            <div class="lh-100">
+              <h6 class="mb-0 text-white lh-100">CONTACTO EN CASO DE EMERGENCIA</h6>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <!-- Nombre Emergencia  -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="nombreEmergencia" class="control-label required">Nombre</label>
+                  <input type="text" class="form-control" id="nombreEmergencia" placeholder="Nombre"
+                    name="nombreEmergencia" [(ngModel)]="userEdit.nombreEmergencia" required>
+                </div>
+              </div>
+              <!-- Apellido Emergencia  -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="apellidoEmergencia" class="control-label required">Apellido</label>
+                  <input type="text" class="form-control" id="apellidoEmergencia" placeholder="Apellido"
+                    name="apellidoEmergencia" [(ngModel)]="userEdit.apellidoEmergencia" required>
+
+                </div>
+              </div>
+              <!-- Parentesco -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="parentescoEmergencia" class="control-label">Parentesco</label>
+                  <select class="form-control" id="parentescoEmergencia" id="parentescoEmergencia"
+                    placeholder="Parentesco" name="parentescoEmergencia" [(ngModel)]="userEdit.parentescoEmergencia"
+                    required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="Padre / Madre">Padre / Madre</option>
+                    <option value="Hermano(a)">Hermano(a)</option>
+                    <option value="Tio(a)">Tio(a)</option>
+                    <option value="Abuelo(a)">Abuelo(a)</option>
+                    <option value="Primo(a)">Primo(a)</option>
+                    <option value="Amigo(a)">Amigo(a)</option>
+                    <option value="Pareja">Pareja</option>
+                  </select>
+
+                </div>
+              </div>
+              <!-- Teléfono (código de país, de área u operadora y número)  -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="telefonoEmergencia" class="control-label required">Teléfono (código de país, de área
+                    u operadora y número)</label>
+                  <input type="text" class="form-control" id="telefonoEmergencia" placeholder="Teléfono"
+                    name="telefonoEmergencia" [(ngModel)]="userEdit.telefonoEmergencia" required>
+                </div>
+              </div>
+              <!-- Email Emergencia -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="emailEmergencia" class="control-label required">Correo electrónico</label>
+                  <input type="email" class="form-control" id="emailEmergencia" placeholder="Correo electrónico"
+                    name="emailEmergencia" [(ngModel)]="userEdit.emailEmergencia" required>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+            style="background-color:black">
+            <div class="lh-100">
+              <h6 class="mb-0 text-white lh-100">DATOS DEL TALLER</h6>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <!-- Track en el que desea participar -->
+              <!-- <div class="form-group col-md-6" *ngIf="!track">
+                <div class="col-12">
+                  <label for="interesado" class="control-label required">Track en el que desea participar</label>
+                  <select class="form-control" id="interesado" id="interesado" placeholder="Track" name="interesado"
+                    [(ngModel)]="userEdit.interesado" required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option *ngFor="let tra of tracks" value="{{tra._id}}">{{tra.titulo}}</option>
+                  </select>
+
+                </div>
+              </div> -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="interesado" class="control-label">Track en el que desea participar</label>
+                  <textarea type="text" class="form-control" id="interesado" placeholder="Track" name="interesado"
+                    [(ngModel)]="userEdit.interesado" readonly></textarea>
+
+                </div>
+              </div>
+              <!-- Ha participado en algún taller organizado por ESLARED?  -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="participcionAnterior" class="control-label required">Ha participado en algún taller
+                    organizado por ESLARED?</label>
+                  <select class="form-control" id="participcionAnterior" id="participcionAnterior"
+                    name="participcionAnterior" [(ngModel)]="userEdit.participcionAnterior" #participcionAnterior
+                    required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                  </select>
+
+                </div>
+              </div>
+              <!-- Año en el que participó  -->
+              <div class="form-group col-md-6" *ngIf="participcionAnterior.value == 'Si'">
+                <div class="col-12">
+                  <label for="anoParticipado" class="control-label ">Año en el que participó</label>
+                  <select class="form-control" id="anoParticipado" id="anoParticipado" name="anoParticipado"
+                    [(ngModel)]="userEdit.anoParticipado" required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="2018-DO">2018-DO</option>
+                    <option value="2017-SV">2017-SV</option>
+                    <option value="2016-HN">2016-HN</option>
+                    <option value="2015-CR">2015-CR</option>
+                    <option value="2014-EC">2014-EC</option>
+                    <option value="2013-NI">2013-NI</option>
+                    <option value="2012-PA">2012-PA</option>
+                    <option value="2011-EC">2011-EC</option>
+                    <option value="2010-BO">2010-BO</option>
+                    <option value="2009-CO">2009-CO</option>
+                    <option value="2008-VE">2008-VE</option>
+                    <option value="2007-VE">2007-VE</option>
+                    <option value="2006-EC">2006-EC</option>
+                    <option value="2005-VE">2005-VE</option>
+                    <option value="2004-PE">2004-PE</option>
+                    <option value="2003-VE">2003-VE</option>
+                    <option value="2002-DO">2002-DO</option>
+                    <option value="2001-VE">2001-VE</option>
+                    <option value="2000-MX">2000-MX</option>
+                    <option value="1999-VE">1999-VE</option>
+                    <option value="1998-BR">1998-BR</option>
+                    <option value="1997-VE">1997-VE</option>
+                    <option value="1996-VE">1996-VE</option>
+                    <option value="1995-VE">1995-VE</option>
+                    <option value="1992-VE">1992-VE</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Taller en el que participó  -->
+              <div class="form-group col-md-6" *ngIf="participcionAnterior.value == 'Si'">
+                <div class="col-12">
+                  <label for="trackParticipado" class="control-label ">Taller en el que participó</label>
+                  <select class="form-control" id="trackParticipado" id="trackParticipado" name="trackParticipado"
+                    [(ngModel)]="userEdit.trackParticipado" required>
+                    <option selected="selected" value="" disabled>Elija una Opción </option>
+                    <option value="Administración de gobernabilidad de los recursos de internet">Administración de
+                      gobernabilidad de los recursos de internet</option>
+                    <option value="Administración de proyectos de redes y telecomunicaciones">Administración de
+                      proyectos de redes y telecomunicaciones</option>
+                    <option value="Alta disponibilidad y virtualización">Alta disponibilidad y virtualización
+                    </option>
+                    <option value="Big Data">Big Data</option>
+                    <option value="Computación en la Nube">Computación en la Nube</option>
+                    <option value="Desarrolladores de contenido en AL&amp;C">Desarrolladores de contenido en
+                      AL&amp;C</option>
+                    <option value="Desarrollo de contenidos">Desarrollo de contenidos</option>
+                    <option value="Desarrollo web con software libre">Desarrollo web con software libre</option>
+                    <option value="Desarrollo y producción de contenidos">Desarrollo y producción de contenidos
+                    </option>
+                    <option value="Despliegue de IPv6">Despliegue de IPv6</option>
+                    <option value="Diseño de redes universitarias, de educación e investigación">Diseño de redes
+                      universitarias, de educación e investigación</option>
+                    <option value="E-Learning">E-Learning</option>
+                    <option value="Enrutamiento avanzado y multicast">Enrutamiento avanzado y multicast</option>
+                    <option value="Enrutamiento e internet">Enrutamiento e internet</option>
+                    <option value="Foro: Internet y sociedad">Foro: Internet y sociedad</option>
+                    <option value="Gerencia de redes y de servicios de información">Gerencia de redes y de
+                      servicios de información</option>
+                    <option value="Gestión de Redes">Gestión de Redes</option>
+                    <option value="Gestión de proyectos TIC">Gestión de proyectos TIC</option>
+                    <option value="Internet de las Cosas">Internet de las Cosas</option>
+                    <option value="Migración a soluciones de software libre">Migración a soluciones de software
+                      libre</option>
+                    <option value="Producción de contenidos en proyectos tics para el desarrollo social">
+                      Producción de contenidos en proyectos tics para el desarrollo social</option>
+                    <option value="Protocolos TCP/IP">Protocolos TCP/IP</option>
+                    <option value="Protocolos de redes de área local">Protocolos de redes de área local</option>
+                    <option value="Redes Comunitarias">Redes Comunitarias</option>
+                    <option value="Redes de sensores inalámbricos">Redes de sensores inalámbricos</option>
+                    <option value="Redes inalámbricas para la transmisión de datos">Redes inalámbricas para la
+                      transmisión de datos</option>
+                    <option
+                      value="Registro de direcciones IP en Latino América y el Caribe (LACNIC), y políticas de asignación de dominios">
+                      Registro de direcciones IP en Latino América y el Caribe (LACNIC), y políticas de asignación
+                      de dominios</option>
+                    <option value="Seguridad de redes">Seguridad de redes</option>
+                    <option value="Seguridad informática">Seguridad informática</option>
+                    <option value="Servicios de información en ambientes internet/intranet/extranet">Servicios de
+                      información en ambientes internet/intranet/extranet</option>
+                    <option value="Sistema de información geográfica (GIS) con software libre">Sistema de
+                      información geográfica (GIS) con software libre</option>
+                    <option value="Taller de gerencia teleinformática">Taller de gerencia teleinformática</option>
+                    <option value="Taller de unix">Taller de unix</option>
+                    <option value="Tecnología de redes">Tecnología de redes</option>
+                    <option value="Tecnologías de internet para bibliotecas">Tecnologías de internet para
+                      bibliotecas</option>
+                    <option value="Telecomunicaciones">Telecomunicaciones</option>
+                    <option value="Telefonía IP">Telefonía IP</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Que Expectativas tiene del conocimiento que adquirirá en el taller?   -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="expectativaTaller" class="control-label">Que Expectativas tiene del conocimiento que
+                    adquirirá en el taller?</label>
+                  <input type="text" class="form-control" id="expectativaTaller" placeholder="Expectativas"
+                    name="expectativaTaller" [(ngModel)]="userEdit.expectativaTaller" required>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+            style="background-color:black">
+            <div class="lh-100">
+              <h6 class="mb-0 text-white lh-100">DATOS USUARIO</h6>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <!-- Email Personal  -->
+              <div class="form-group col-md-6">
+                <div class="col-12">
+                  <label for="emailPersonal" class="control-label required">Email Personal (Con este correo inciara
+                    sesión)</label>
+                  <input type="email" class="form-control" id="emailPersonal" placeholder="Email Personal"
+                    name="emailPersonal" [(ngModel)]="userEdit.emailPersonal" required>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn btn-outline-dark"
+          style="color: #e7cf26; border-color: #e7cf26">Cancelar</button>
+        <button type="submit" class="btn btn-outline-dark" (click)="updateUser(userEdit._id)"
+          style="color: #e7cf26; border-color: #e7cf26">Editar Usuario</button>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Interesado -->
+<div class="modal" id="interesadoModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">¿Quiere mover a interesados al usuario {{userEdit.primerNombre}}?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3>¿Está seguro de mover a interesados al usuario <strong>{{userEdit.primerNombre}}</strong>?</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn btn-outline-dark"
+          style="color: #e7cf26; border-color: #e7cf26">Cancelar</button>
+        <button type="submit" class="btn btn-outline-dark" (click)="interesado()"
+          style="color: #e7cf26; border-color: #e7cf26">Interesado</button>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Preinscribir -->
+<div class="modal" id="preInscribir" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Eliminar Patrocinador {{userEdit.primerNombre}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3>¿Está seguro de preInscribir al patrocinador <strong>{{userEdit.primerNombre}}</strong>?</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" data-dismiss="modal"
+          style="color: #e7cf26; border-color: #e7cf26">Cancelar</button>
+        <button type="submit" class="btn btn-outline-dark" (click)="preInscribir()"
+          style="color: #e7cf26; border-color: #e7cf26">PreInscribir</button>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Inscribir -->
+<div class="modal" id="inscribir" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">¿Quiere inscribir a {{userEdit.primerNombre}}?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3>¿Está seguro de inscribir a <strong>{{userEdit.primerNombre}}</strong>?</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" data-dismiss="modal"
+          style="color: #e7cf26; border-color: #e7cf26">Cancelar</button>
+        <button type="submit" class="btn btn-outline-dark" (click)="Inscribir()"
+          style="color: #e7cf26; border-color: #e7cf26">Inscribir</button>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

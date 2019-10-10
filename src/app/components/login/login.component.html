@@ -1,0 +1,42 @@
+<app-nav></app-nav>
+<body>
+  <div id="wrapper">
+  <div id="left">
+    <div id="signin">
+      <div class="logo" style="margin-top: 28%">
+        <img src="./assets/img/logo.PNG" alt="WALC" />
+      </div>
+      <form #loginform="ngForm" (ngSubmit)="login()">
+        <div>
+          <label>Correo</label>
+          <input type="text" id="inputEmail" class="text-input"  placeholder="Dirección de correo" required autofocus
+          name="emailPersonal" #emailPersonal='ngModel' [(ngModel)]="user.emailPersonal">
+        </div>
+        <div>
+            <div class="text-center" *ngIf="loading" id="spinner">
+                <div class="spinner-border" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </div>
+          <label>Contraseña</label>
+          <input type="password" class="text-input" id="inputPassword"  placeholder="Contraseña" required name="password"
+          #password='ngModel' [(ngModel)]="user.password"/>
+        </div>
+        <button type="submit" class="primary-btn" (click)="activarCarga()">Iniciar Sesion</button>
+      </form>
+      <div class="or">
+        <hr class="bar" />
+        <span>O</span>
+        <hr class="bar" />
+      </div>
+      <a routerLink="/formulario" class="secondary-btn" >Registrarse</a>
+    </div>
+  </div>
+  <div id="right">
+    <div id="showcase">
+      <div class="showcase-content">
+      </div>
+    </div>
+  </div>
+</div>
+</body>

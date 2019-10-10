@@ -1,0 +1,238 @@
+
+    <section id="team" class="pb-5">
+        <div class="container">
+            <h5 class="section-title h1">Patrocinadores Internacionales</h5>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let patr of patrocinadoresInter">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                        <img class="img-fluid"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Pink_sky.jpg"
+                                        alt="card image" *ngIf="!patr.image">
+                                        <!-- <img class="card-img-top" src="{{ patr.image }}" height="{{patr.height}}" width="{{patr.width}}" alt="Card image cap"> -->
+                                        <img class="card-img-top" src="{{ patr.image }}"  alt="Card image cap">
+                                        <div class="card-body text-center">
+                                        
+                                        <h4 class="card-title">{{patr.nombre}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card" style="width: 350px">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">{{patr.nombre}}</h4>
+                                        <p class="card-text">{{patr.descripcion}}</p>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#actualizar"
+                                            (click)="getSponsor(patr._id)" *ngIf="admin == true">Editar</button>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#eliminar"
+                                            (click)="getSponsor(patr._id)" *ngIf="admin == true">Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Patrocinadores Nacionales -->
+            <h5 class="section-title h1">Patrocinadores Nacionales</h5>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let patr of patrocinadoresNacionales">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                        <img class="img-fluid"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Pink_sky.jpg"
+                                        alt="card image" *ngIf="!patr.image">
+                                        <img class="card-img-top" src="{{ patr.image }}" alt="Card image cap">
+                                    <div class="card-body text-center">
+                                        <!-- <img class="img-fluid"
+                                                src="{{ patr.image }}"
+                                                alt="card image" *ngIf="patr.image"> -->
+                                        <h4 class="card-title">{{patr.nombre}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card" style="width: 350px">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">{{patr.nombre}}</h4>
+                                        <p class="card-text">{{patr.descripcion}}</p>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#actualizar"
+                                            (click)="getSponsor(patr._id)" *ngIf="admin == true">Editar</button>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#eliminar"
+                                            (click)="getSponsor(patr._id)" *ngIf="admin == true">Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button class="btn btn-primary btn-lg float-right rounded-circle d-print-flex" id="buttonAdd" *ngIf="admin == true"
+            data-toggle="modal" data-target="#agregar" style="height: 70px; width: 70px; margin:0 5vh 3vh 0">
+            <i class="fas fa-plus"></i></button>
+        <br>
+        <br>
+    </section>
+
+    <!-- Agregar Proveedor -->
+    <div class="modal" id="agregar" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregar Patrocinador</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form #registerFrom="ngForm">
+                        <p class="card-text">Nombre</p>
+                        <div class="col-md-5">
+                            <div class="form-group has-success">
+                                <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre"
+                                    #nombre="ngModel" [(ngModel)]="proveedor.nombre" required style="width: 350px">
+                                <span *ngIf="!nombre.valid && nombre.touched" style="color: red">*</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Descripcion</p>
+                        <div class="col-md-5">
+                            <div class="form-group has-success">
+                                <input type="text" class="form-control" id="descripcion" placeholder="descripcion"
+                                    name="descripcion" #descripcion="ngModel" [(ngModel)]="proveedor.descripcion"
+                                    required style="width: 350px">
+                                <span *ngIf="!descripcion.valid && descripcion.touched" style="color: red">*</span>
+                            </div>
+                        </div>
+                        <div class="form-check-radio">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="internacional"
+                                    #internacional="ngModel" [(ngModel)]="proveedor.internacional" id="internacional"
+                                    value="true">
+                                Internacional
+                                <span class="form-check-sign"></span>
+                            </label>
+                        </div>
+                        <div class="form-check-radio">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="internacional"
+                                    #internacional="ngModel" [(ngModel)]="proveedor.internacional" id="internacional"
+                                    value="false">
+                                Nacional
+                                <span class="form-check-sign"></span>
+                            </label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group has-success">
+                                <input type="text" class="form-control" id="image" placeholder="imagen"
+                                    name="image" #image="ngModel" [(ngModel)]="proveedor.image" style="width: 350px">
+                               
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" (click)="register()">Agregar</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actualizar Proveedor -->
+    <div class="modal" id="actualizar" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Actualizar Patrocinador</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form #registerFrom="ngForm">
+                        <p class="card-text">Nombre</p>
+                        <div class="col-md-5">
+                            <div class="form-group has-success">
+                                <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre"
+                                    #nombre="ngModel" [(ngModel)]="patrocinador.nombre" required style="width: 350px">
+                                <span *ngIf="!nombre.valid && nombre.touched" style="color: red">*</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Descripcion</p>
+                        <div class="col-md-5">
+                            <div class="form-group has-success">
+                                <input type="text" class="form-control" id="descripcion" placeholder="descripcion"
+                                    name="descripcion" #descripcion="ngModel" [(ngModel)]="patrocinador.descripcion"
+                                    required style="width: 350px">
+                                <span *ngIf="!descripcion.valid && descripcion.touched" style="color: red">*</span>
+                            </div>
+                        </div>
+                        <div class="form-check-radio">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="internacional"
+                                    #internacional="ngModel" [(ngModel)]="patrocinador.internacional" id="internacional"
+                                    value="true">
+                                Internacional
+                                <span class="form-check-sign"></span>
+                            </label>
+                        </div>
+                        <div class="form-check-radio">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="internacional"
+                                    #internacional="ngModel" [(ngModel)]="patrocinador.internacional" id="internacional"
+                                    value="false">
+                                Nacional
+                                <span class="form-check-sign"></span>
+                            </label>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="image">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="image" aria-describedby="image"
+                                    (change)="fileChangeEvent($event)" style="width:350px">
+                                <label class="custom-file-label" for="image">Choose file</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-success"
+                                (click)="updateSponer(patrocinador._id)">Actualizar</button>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Eliminar Patrocinador -->
+    <div class="modal" id="eliminar" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminar Patrocinador {{patrocinador.nombre}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>¿Está seguro de eliminar al patrocinador <strong>{{patrocinador.nombre}}</strong>?</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger" (click)="deleteSponsor(patrocinador._id)">Eliminar</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>  

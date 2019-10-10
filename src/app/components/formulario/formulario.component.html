@@ -1,0 +1,941 @@
+<body>
+  <br><br>
+  <br><body>
+  <h1 class="text-center">FORMULARIO DE REGISTRO</h1>
+
+  <a href="http://eslared.net/walc2019/?page_id=8&lang=es_ES" class="btn btn-outline-dark"
+    style="color: #e7cf26; border-color: #e7cf26">Preinscripción Extranjeros</a>
+
+  <div class="container">
+    <div>
+      <main class="mx-auto d-block">
+        <form [formGroup]="RegistroForm">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+                  style="background-color:black">
+                  <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">DATOS DEL PARTICIPANTE</h6>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-row">
+                    <!-- Imagen -->
+                    <div class="form-group col-md-6">
+                      <div class="image-upload">
+                        <input class="btn btn-outline-secondary" style="color: black" name="imageUrl" type="file"
+                          accept="image/*" (change)="handleInputChange($event)" />
+                      </div>
+                    </div>
+                    <!-- <div class="form-group col-md-6">
+                      <div *ngIf="currentFileUpload" class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                          attr.aria-valuenow="{{progress.percentage}}" aria-valuemin="0" aria-valuemax="100"
+                          [ngStyle]="{width:progress.percentage+'%'}">
+                          {{progress.percentage}}%</div>
+                      </div>
+                      <label for="exampleFormControlFile1">Imagen del Participante</label>
+                      <input type="file" id="exampleFormControlFile1" (change)="selectFile($event)"
+                        class="btn btn-outline-secondary" id="exampleFormControlFile1" formControlName="image" style="color: black">
+                    </div> -->
+                    <!-- primerApellido -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('primerApellido')">
+                      <div class="col-12">
+                        <label for="primerApellido" class="control-label required">Primer Apellido</label>
+                        <input type="text" class="form-control" id="primerApellido" placeholder="Primer Apellido"
+                          name="primerApellido" [(ngModel)]="user.primerApellido" formControlName="primerApellido"
+                          required>
+                        <app-app-field-error-display [displayError]="isFieldValid('primerApellido')"
+                          errorMsg="Por favor ingrese el Primer Apellido">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- segundoApellido -->
+                    <div class="form-group col-md-6">
+                      <div class="col-12">
+                        <label for="segundoApellido" class="control-label">Segundo Apellido</label>
+                        <input type="text" class="form-control" id="segundoApellido" placeholder="Segundo Apellido"
+                          name="segundoApellido" formControlName="segundoApellido" [(ngModel)]="user.segundoApellido"
+                          required>
+                      </div>
+                    </div>
+                    <!-- Primer Nombre -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('primerNombre')">
+                      <div class="col-12">
+                        <label for="primerNombre" class="control-label required">Primer Nombre</label>
+                        <input type="text" class="form-control" id="primerNombre" placeholder="Primer Nombre"
+                          name="primerNombre" formControlName="primerNombre" [(ngModel)]="user.primerNombre" required>
+                        <app-app-field-error-display [displayError]="isFieldValid('primerNombre')"
+                          errorMsg="Por favor ingrese el Primer Nombre">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Segundo Nombre -->
+                    <div class="form-group col-md-6">
+                      <div class="col-12">
+                        <label for="segundoNombre" class="control-label">Segundo Nombre</label>
+                        <input type="text" class="form-control" id="segundoNombre" placeholder="Segundo Nombre"
+                          formControlName="segundoNombre" name="segundoNombre" [(ngModel)]="user.segundoNombre"
+                          required>
+                      </div>
+                    </div>
+                    <!-- sexo -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('sexo')">
+                      <div class="col-12">
+                        <label for="sexo" class="control-label required">Sexo</label>
+                        <select class="form-control" id="exampleFormControlSelect1" id="sexo" placeholder="Sexo"
+                          name="sexo" formControlName="sexo" [(ngModel)]="user.sexo" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="Hombre">Hombre</option>
+                          <option value="Mujer">Mujer</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('sexo')"
+                          errorMsg="Por favor ingrese el Sexo">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- paisNacimiento -->
+                    <div class="form-group col-md-6 " [ngClass]="displayFieldCss('paisNacimiento')">
+                      <div class="col-12">
+                        <label for="paisNacimiento" class="control-label required">País Nacimiento</label>
+                        <select class="form-control" id="paisNacimiento" name="paisNacimiento"
+                          formControlName="paisNacimiento" [(ngModel)]="user.paisNacimiento" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option *ngFor="let pais of countries" value="{{pais.name}}">{{pais.name}}</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('paisNacimiento')"
+                          errorMsg="Por favor ingrese el País Nacimiento">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Ciudad de Nacimiento -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('ciudadNacimiento')">
+                      <div class="col-12">
+                        <label for="ciudadNacimiento" class="control-label required">Ciudad de Nacimiento</label>
+                        <input type="text" class="form-control" id="ciudadNacimiento" placeholder="Ciudad de Nacimiento"
+                          name="ciudadNacimiento" formControlName="ciudadNacimiento" [(ngModel)]="user.ciudadNacimiento"
+                          required>
+                        <app-app-field-error-display [displayError]="isFieldValid('ciudadNacimiento')"
+                          errorMsg="Por favor ingrese el Ciudad de Nacimiento">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Fecha de Nacimiento -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('fechaNacimiento')">
+                      <div class="col-12">
+                        <label for="fechaNacimiento" class="control-label required">Fecha de Nacimiento</label>
+                        <div class="input-group">
+                          <input class="form-control" id="fechaNacimiento" placeholder="yyyy-mm-dd" ngbDatepicker
+                            #d="ngbDatepicker" name="fechaNacimiento" formControlName="fechaNacimiento"
+                            [(ngModel)]="user.fechaNacimiento" required>
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"
+                              style="color: black"> <i class="fa fa-calendar"></i></button>
+                          </div>
+                        </div>
+                        <app-app-field-error-display [displayError]="isFieldValid('fechaNacimiento')"
+                          errorMsg="Por favor ingrese el Fecha de Nacimiento">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- País de Nacionalidad -->
+                    <div class="form-group col-md-6 " [ngClass]="displayFieldCss('paisNacionalidad')">
+                      <div class="col-12">
+                        <label for="paisNacionalidad" class="control-label required">País de Nacionalidad</label>
+                        <select class="form-control" id="paisNacionalidad" name="paisNacionalidad"
+                          formControlName="paisNacionalidad" [(ngModel)]="user.paisNacionalidad" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option *ngFor="let pais of countries" value="{{pais.name}}">{{pais.name}}</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('paisNacionalidad')"
+                          errorMsg="Por favor ingrese el País de Nacionalidad">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Tipo de Documento de Identidad -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('tipoDocumentoIdentidad')">
+                      <div class="col-12">
+                        <label for="tipoDocumentoIdentidad" class="control-label required">Tipo de Documento de
+                          Identidad</label>
+                        <select class="form-control" id="exampleFormControlSelect1" id="tipoDocumentoIdentidad"
+                          placeholder="Tipo de Documento de Identidad" name="tipoDocumentoIdentidad"
+                          formControlName="tipoDocumentoIdentidad" [(ngModel)]="user.tipoDocumentoIdentidad" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="Cedula">Cédula</option>
+                          <option value="DNI">DNI</option>
+                          <option value="ID Card">ID Card</option>
+                          <option value="Pasaporte">Pasaporte</option>
+                          <option value="Carta de Identidad">Carta de Identidad</option>
+                          <option value="DUI">DUI</option>
+                          <option value="DPI">DPI</option>
+                          <option value="Otro">Otro</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('tipoDocumentoIdentidad')"
+                          errorMsg="Por favor ingrese el Tipo de Documento de Identidad">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Número de Documento de Identidad -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('numeroDocumentoIdentidad')">
+                      <div class="col-12">
+                        <label for="numeroDocumentoIdentidad" class="control-label required">Número de Documento de
+                          Identidad</label>
+                        <input type="text" class="form-control" id="numeroDocumentoIdentidad"
+                          placeholder="Número de Documento de Identidad" name="numeroDocumentoIdentidad"
+                          formControlName="numeroDocumentoIdentidad" [(ngModel)]="user.numeroDocumentoIdentidad"
+                          required>
+                        <app-app-field-error-display [displayError]="isFieldValid('numeroDocumentoIdentidad')"
+                          errorMsg="Por favor ingrese el Número de Documento de Identidad">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Dirección de Habitación -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('direccionHabitacion')">
+                      <div class="col-12">
+                        <label for="direccionHabitacion" class="control-label required">Dirección de Habitación</label>
+                        <input type="text" class="form-control" id="direccionHabitacion"
+                          placeholder="Número de Documento de Identidad" name="direccionHabitacion"
+                          formControlName="direccionHabitacion" [(ngModel)]="user.direccionHabitacion" required>
+                        <app-app-field-error-display [displayError]="isFieldValid('direccionHabitacion')"
+                          errorMsg="Por favor ingrese la Dirección de Habitación">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Teléfono de Habitación (código de país, de área y número) -->
+                    <div class="form-group col-md-6">
+                      <div class="col-12">
+                        <label for="telefonoHabitacion" class="control-label">Teléfono de Habitación (código de país, de
+                          área y número)</label>
+                        <input type="text" class="form-control" id="telefonoHabitacion"
+                          placeholder="Teléfono de Habitación" formControlName="telefonoHabitacion"
+                          name="telefonoHabitacion" [(ngModel)]="user.telefonoHabitacion" required>
+                      </div>
+                    </div>
+                    <!-- Celular Personal (código de país, de operadora y número)  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('celularPersonal')">
+                      <div class="col-12">
+                        <label for="celularPersonal" class="control-label required">Celular Personal (código de país, de
+                          operadora y número) </label>
+                        <input type="text" class="form-control" id="celularPersonal" placeholder="Celular Personal"
+                          name="celularPersonal" formControlName="celularPersonal" [(ngModel)]="user.celularPersonal"
+                          required>
+                        <app-app-field-error-display [displayError]="isFieldValid('celularPersonal')"
+                          errorMsg="Por favor ingrese el Celular Personal">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Email Personal  -->
+                    <!-- <div class="form-group col-md-6" [ngClass]="displayFieldCss('emailPersonal')">
+                        <div class="col-12">
+                          <label for="emailPersonal" class="control-label required">Email Personal (Con este correo inciara sesión)</label>
+                          <input type="email" class="form-control" id="emailPersonal" placeholder="Email Personal"
+                            name="emailPersonal" formControlName="emailPersonal" [(ngModel)]="user.emailPersonal"
+                            required>
+                          <app-app-field-error-display [displayError]="isFieldValid('emailPersonal')"
+                            errorMsg="Por favor ingrese el Email Personal">
+                          </app-app-field-error-display>
+                        </div>
+                    </div>   -->
+                    <!-- Email Institucional (esta dirección electrónica debe ser diferente a la anterior)  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('emailInstitucional')">
+                      <div class="col-12">
+                        <label for="emailInstitucional" class="control-label required">Email Institucional (esta
+                          dirección electrónica debe ser diferente a la anterior)</label>
+                        <input type="email" class="form-control" id="emailInstitucional"
+                          placeholder="Email Institucional" name="emailInstitucional"
+                          formControlName="emailInstitucional" [(ngModel)]="user.emailInstitucional" required>
+                        <app-app-field-error-display [displayError]="isFieldValid('emailInstitucional')"
+                          errorMsg="Por favor ingrese el Email Institucional">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- ¿Tiene Usted alguna preferencia alimentaria? -->
+                    <div class="form-group col-md-6">
+                      <div class="col-12">
+                        <label for="preferenciaAlimentaria" class="control-label">¿Tiene Usted alguna preferencia
+                          alimentaria?</label>
+                        <select class="form-control" id="exampleFormControlSelect1" id="preferenciaAlimentaria"
+                          placeholder="Preferencia Alimentaria" name="preferenciaAlimentaria"
+                          formControlName="preferenciaAlimentaria" [(ngModel)]="user.preferenciaAlimentaria"
+                          #preferenciaAlimentaria required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="Si">Si</option>
+                          <option value="No">No</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Describa/Especifique su preferencia alimentaria -->
+                    <div class="form-group col-md-6" *ngIf="preferenciaAlimentaria.value == 'Si'">
+                      <div class="col-12">
+                        <label for="descripcionAlimentaria" class="control-label">Describa/Especifique su preferencia
+                          alimentaria</label>
+                        <textarea type="text" class="form-control" id="descripcionAlimentaria"
+                          placeholder="Descripcion Alimentaria" formControlName="descripcionAlimentaria"
+                          name="descripcionAlimentaria" [(ngModel)]="user.descripcionAlimentaria" required></textarea>
+                      </div>
+                    </div>
+                    <!-- ¿Es Usted alérgico a algún medicamento o a algún alimento? -->
+                    <div class="form-group col-md-6">
+                      <div class="col-12">
+                        <label for="alergia" class="control-label">¿Es Usted alérgico a algún medicamento o a algún
+                          alimento?</label>
+                        <select class="form-control" id="alergia" id="alergia" placeholder="Alergia" name="alergia"
+                          formControlName="alergia" [(ngModel)]="user.alergia" #alergia required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="Si">Si</option>
+                          <option value="No">No</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Describa/Especifique su alergia -->
+                    <div class="form-group col-md-6" *ngIf="alergia.value == 'Si'">
+                      <div class="col-12">
+                        <label for="descripcionAlergia" class="control-label">Describa/Especifique su alergia</label>
+                        <textarea type="text" class="form-control" id="descripcionAlergia"
+                          placeholder="Descripcion Alergia" formControlName="descripcionAlergia"
+                          name="descripcionAlergia" [(ngModel)]="user.descripcionAlergia" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div class="card">
+                <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+                  style="background-color:black">
+                  <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">ORGANIZACIÓN O EMPRESA A LA QUE PERTENECE</h6>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-row">
+                    <!-- Tipo de Organización  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('tipoOrganizacion')">
+                      <div class="col-12">
+                        <label for="tipoOrganizacion" class="control-label required">Tipo de Organización</label>
+                        <select class="form-control" id="tipoOrganizacion" placeholder="Tipo de Organización "
+                          name="tipoOrganizacion" formControlName="tipoOrganizacion" [(ngModel)]="user.tipoOrganizacion"
+                          required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="Académica">Académica</option>
+                          <option value="Pública">Pública</option>
+                          <option value="Privada">Privada</option>
+                          <option value="Gubernamental">Gubernamental</option>
+                          <option value="ONG">ONG</option>
+                          <option value="Humanitaria">Humanitaria</option>
+                          <option value="Militar">Militar</option>
+                          <option value="Sin Fines de Lucro">Sin Fines de Lucro</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('tipoOrganizacion')"
+                          errorMsg="Por favor ingrese el Tipo de Organización">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Nombre Organización -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('nombreOrganizacion')">
+                      <div class="col-12">
+                        <label for="nombreOrganizacion" class="control-label required">Nombre Organización</label>
+                        <input type="text" class="form-control" id="nombreOrganizacion"
+                          placeholder="Nombre Organizacion" name="nombreOrganizacion"
+                          formControlName="nombreOrganizacion" [(ngModel)]="user.nombreOrganizacion" required>
+                        <app-app-field-error-display [displayError]="isFieldValid('nombreOrganizacion')"
+                          errorMsg="Por favor ingrese el Nombre Organización">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Siglas de la Institución -->
+                    <div class="form-group col-md-6">
+                      <div class="col-12">
+                        <label for="siglasOrganizacion" class="control-label">Siglas de la Institución</label>
+                        <input type="text" class="form-control" id="siglasOrganizacion"
+                          placeholder="Siglas de la Institución" formControlName="siglasOrganizacion"
+                          name="siglasOrganizacion" [(ngModel)]="user.siglasOrganizacion" required>
+                      </div>
+                    </div>
+                    <!-- URL -->
+                    <div class="form-group col-md-6">
+                      <div class="col-12">
+                        <label for="urlOrganizacion" class="control-label">URL</label>
+                        <input type="text" class="form-control" id="urlOrganizacion" placeholder="URL"
+                          formControlName="urlOrganizacion" name="urlOrganizacion" [(ngModel)]="user.urlOrganizacion"
+                          required>
+                      </div>
+                    </div>
+                    <!-- Dirección Organización -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('direccionOrganizacion')">
+                      <div class="col-12">
+                        <label for="direccionOrganizacion" class="control-label required">Dirección Organización</label>
+                        <input type="text" class="form-control" id="direccionOrganizacion"
+                          placeholder="Dirección Organización" name="direccionOrganizacion"
+                          formControlName="direccionOrganizacion" [(ngModel)]="user.direccionOrganizacion" required>
+                        <app-app-field-error-display [displayError]="isFieldValid('direccionOrganizacion')"
+                          errorMsg="Por favor ingrese el Dirección Organización">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Ciudad Organización -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('ciudadOrganizacion')">
+                      <div class="col-12">
+                        <label for="ciudadOrganizacion" class="control-label required">Ciudad Organización</label>
+                        <input type="text" class="form-control" id="ciudadOrganizacion"
+                          placeholder="Ciudad Organización" name="ciudadOrganizacion"
+                          formControlName="ciudadOrganizacion" [(ngModel)]="user.ciudadOrganizacion" required>
+                        <app-app-field-error-display [displayError]="isFieldValid('ciudadOrganizacion')"
+                          errorMsg="Por favor ingrese el Ciudad Organización">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- País Organización -->
+                    <div class="form-group col-md-6 " [ngClass]="displayFieldCss('paisOrganizacion')">
+                      <div class="col-12">
+                        <label for="paisOrganizacion" class="control-label required">País Organización</label>
+                        <select class="form-control" id="paisOrganizacion" name="paisOrganizacion"
+                          formControlName="paisOrganizacion" [(ngModel)]="user.paisOrganizacion" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option *ngFor="let pais of countries" value="{{pais.name}}">{{pais.name}}</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('paisOrganizacion')"
+                          errorMsg="Por favor ingrese el País de Nacionalidad">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Teléfono de Organización (código de país, de área y número) -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('telefonoOrganizacion')">
+                      <div class="col-12">
+                        <label for="telefonoOrganizacion" class="control-label required">Teléfono de Organización
+                          (código de país, de área y número)</label>
+                        <input type="text" class="form-control" id="telefonoOrganizacion"
+                          placeholder="Teléfono de Habitación" formControlName="telefonoOrganizacion"
+                          name="telefonoOrganizacion" [(ngModel)]="user.telefonoOrganizacion" required>
+                      </div>
+                      <app-app-field-error-display [displayError]="isFieldValid('telefonoOrganizacion')"
+                        errorMsg="Por favor ingrese el Teléfono de Habitación">
+                      </app-app-field-error-display>
+                    </div>
+                    <!-- Fax Organización (código de país, de operadora y número)  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('faxOrganizacion')">
+                      <div class="col-12">
+                        <label for="faxOrganizacion" class="control-label required">Fax Organización (código de país, de
+                          operadora y número) </label>
+                        <input type="text" class="form-control" id="faxOrganizacion" placeholder="Fax Organización"
+                          name="faxOrganizacion" formControlName="faxOrganizacion" [(ngModel)]="user.faxOrganizacion"
+                          required>
+                        <app-app-field-error-display [displayError]="isFieldValid('faxOrganizacion')"
+                          errorMsg="Por favor ingrese el Fax Organización">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Cargo que ocupa -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('cargoOrganizacion')">
+                      <div class="col-12">
+                        <label for="cargoOrganizacion" class="control-label required">Cargo que ocupa</label>
+                        <input type="text" class="form-control" id="cargoOrganizacion"
+                          placeholder="Número de Documento de Identidad" name="cargoOrganizacion"
+                          formControlName="cargoOrganizacion" [(ngModel)]="user.cargoOrganizacion" required>
+                        <app-app-field-error-display [displayError]="isFieldValid('cargoOrganizacion')"
+                          errorMsg="Por favor ingrese el Cargo que ocupa">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Período en el cargo -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('periodoCargoOrganizacion')">
+                      <div class="col-12">
+                        <label for="periodoCargoOrganizacion" class="control-label">Período en el cargo</label>
+                        <select class="form-control" id="periodoCargoOrganizacion" id="periodoCargoOrganizacion"
+                          placeholder="Período en el cargo" name="periodoCargoOrganizacion"
+                          formControlName="periodoCargoOrganizacion" [(ngModel)]="user.periodoCargoOrganizacion"
+                          required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="1 año">1 año</option>
+                          <option value="2 años">2 años</option>
+                          <option value="3 años">3 años</option>
+                          <option value="4 años">4 años</option>
+                          <option value="5 años">5 años</option>
+                          <option value="6 años">6 años</option>
+                          <option value="7 años">7 años</option>
+                          <option value="8 años">8 años</option>
+                          <option value="9 años">9 años</option>
+                          <option value="10 años">10 años</option>
+                          <option value="11 años">11 años</option>
+                          <option value="12 años">12 años</option>
+                          <option value="13 años">13 años</option>
+                          <option value="14 años">14 años</option>
+                          <option value="15 años">15 años</option>
+                          <option value="16 años">16 años</option>
+                          <option value="17 años">17 años</option>
+                          <option value="18 años">18 años</option>
+                          <option value="19 años">19 años</option>
+                          <option value="20 años">20 años</option>
+                          <option value="Más de 20 años">Más de 20 años</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('periodoCargoOrganizacion')"
+                          errorMsg="Por favor ingrese el Período en el cargo">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Responsabilidades -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('responsabilidadesOrganizacion')">
+                      <div class="col-12">
+                        <label for="responsabilidadesOrganizacion"
+                          class="control-label required">Responsabilidades</label>
+                        <textarea type="text" class="form-control" id="responsabilidadesOrganizacion"
+                          placeholder="Responsabilidades" name="responsabilidadesOrganizacion"
+                          formControlName="responsabilidadesOrganizacion"
+                          [(ngModel)]="user.responsabilidadesOrganizacion" required></textarea>
+                        <app-app-field-error-display [displayError]="isFieldValid('responsabilidadesOrganizacion')"
+                          errorMsg="Por favor ingrese las Responsabilidades">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+                  style="background-color:black">
+                  <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">EDUCACIÓN</h6>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-row">
+                    <!-- Institución  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('institucionEduacion')">
+                      <div class="col-12">
+                        <label for="institucionEduacion" class="control-label required">Institución</label>
+                        <input type="text" class="form-control" id="institucionEduacion" placeholder="Institución"
+                          name="institucionEduacion" formControlName="institucionEduacion"
+                          [(ngModel)]="user.institucionEduacion" required>
+                        <app-app-field-error-display [displayError]="isFieldValid('institucionEduacion')"
+                          errorMsg="Por favor ingrese la Institución ">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Período de estudio -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('periodoEstudioEduacion')">
+                      <div class="col-12">
+                        <label for="periodoEstudioEduacion" class="control-label">Período de estudio</label>
+                        <select class="form-control" id="periodoEstudioEduacion" id="periodoEstudioEduacion"
+                          placeholder="Período de estudio" name="periodoEstudioEduacion"
+                          formControlName="periodoEstudioEduacion" [(ngModel)]="user.periodoEstudioEduacion" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="1 año">1 año</option>
+                          <option value="2 años">2 años</option>
+                          <option value="3 años">3 años</option>
+                          <option value="4 años">4 años</option>
+                          <option value="5 años">5 años</option>
+                          <option value="6 años">6 años</option>
+                          <option value="7 años">7 años</option>
+                          <option value="8 años">8 años</option>
+                          <option value="9 años">9 años</option>
+                          <option value="10 años">10 años</option>
+                          <option value="10 años o más">10 años o más</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('periodoEstudioEduacion')"
+                          errorMsg="Por favor ingrese el Período de estudio">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Desde -->
+                    <div class="form-group col-md-6">
+                      <div class="col-12">
+                        <label for="desdeEduacion" class="control-label">Desde</label>
+                        <input type="text" class="form-control" id="desdeEduacion" placeholder="Desde"
+                          formControlName="desdeEduacion" name="desdeEduacion" [(ngModel)]="user.desdeEduacion"
+                          required>
+                      </div>
+                    </div>
+                    <!-- Hasta -->
+                    <div class="form-group col-md-6">
+                      <div class="col-12">
+                        <label for="hastaEducacion" class="control-label">Hasta</label>
+                        <input type="text" class="form-control" id="hastaEducacion" placeholder="Hasta"
+                          formControlName="hastaEducacion" name="hastaEducacion" [(ngModel)]="user.hastaEducacion"
+                          required>
+                      </div>
+                    </div>
+                    <!-- Ciudad de Educación -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('ciudadEduacion')">
+                      <div class="col-12">
+                        <label for="ciudadEduacion" class="control-label required">Ciudad de Educación</label>
+                        <input type="text" class="form-control" id="ciudadEduacion" placeholder="Ciudad de Educación"
+                          name="ciudadEduacion" formControlName="ciudadEduacion" [(ngModel)]="user.ciudadEduacion"
+                          required>
+                        <app-app-field-error-display [displayError]="isFieldValid('ciudadEduacion')"
+                          errorMsg="Por favor ingrese el Ciudad de Educación">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- País Educación -->
+                    <div class="form-group col-md-6 " [ngClass]="displayFieldCss('paisEduacion')">
+                      <div class="col-12">
+                        <label for="paisEduacion" class="control-label required">País Educación</label>
+                        <select class="form-control" id="paisEduacion" name="paisEduacion"
+                          formControlName="paisEduacion" [(ngModel)]="user.paisEduacion" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option *ngFor="let pais of countries" value="{{pais.name}}">{{pais.name}}</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('paisEduacion')"
+                          errorMsg="Por favor ingrese el País de Educación">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Grado Alcanzado  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('gradoAlcanzadoEduacion')">
+                      <div class="col-12">
+                        <label for="gradoAlcanzadoEduacion" class="control-label required">Grado Alcanzado</label>
+                        <select class="form-control" id="gradoAlcanzadoEduacion" placeholder="Grado Alcanzado "
+                          name="gradoAlcanzadoEduacion" formControlName="gradoAlcanzadoEduacion"
+                          [(ngModel)]="user.gradoAlcanzadoEduacion" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="Técnico Superior Universitario">Técnico Superior Universitario</option>
+                          <option value="Licenciado">Licenciado</option>
+                          <option value="Ingeniero">Ingeniero</option>
+                          <option value="Especialista">Especialista</option>
+                          <option value="Magister">Magister</option>
+                          <option value="Doctor">Doctor</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('gradoAlcanzadoEduacion')"
+                          errorMsg="Por favor ingrese el Grado Alcanzado">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+                  style="background-color:black">
+                  <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">CONTACTO EN CASO DE EMERGENCIA</h6>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-row">
+                    <!-- Nombre Emergencia  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('nombreEmergencia')">
+                      <div class="col-12">
+                        <label for="nombreEmergencia" class="control-label required">Nombre</label>
+                        <input type="text" class="form-control" id="nombreEmergencia" placeholder="Nombre"
+                          name="nombreEmergencia" formControlName="nombreEmergencia" [(ngModel)]="user.nombreEmergencia"
+                          required>
+                        <app-app-field-error-display [displayError]="isFieldValid('nombreEmergencia')"
+                          errorMsg="Por favor ingrese el Nombre ">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Apellido Emergencia  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('apellidoEmergencia')">
+                      <div class="col-12">
+                        <label for="apellidoEmergencia" class="control-label required">Apellido</label>
+                        <input type="text" class="form-control" id="apellidoEmergencia" placeholder="Apellido"
+                          name="apellidoEmergencia" formControlName="apellidoEmergencia"
+                          [(ngModel)]="user.apellidoEmergencia" required>
+                        <app-app-field-error-display [displayError]="isFieldValid('apellidoEmergencia')"
+                          errorMsg="Por favor ingrese el Apellido">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Parentesco -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('parentescoEmergencia')">
+                      <div class="col-12">
+                        <label for="parentescoEmergencia" class="control-label">Parentesco</label>
+                        <select class="form-control" id="parentescoEmergencia" id="parentescoEmergencia"
+                          placeholder="Parentesco" name="parentescoEmergencia" formControlName="parentescoEmergencia"
+                          [(ngModel)]="user.parentescoEmergencia" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="Padre / Madre">Padre / Madre</option>
+                          <option value="Hermano(a)">Hermano(a)</option>
+                          <option value="Tio(a)">Tio(a)</option>
+                          <option value="Abuelo(a)">Abuelo(a)</option>
+                          <option value="Primo(a)">Primo(a)</option>
+                          <option value="Amigo(a)">Amigo(a)</option>
+                          <option value="Pareja">Pareja</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('parentescoEmergencia')"
+                          errorMsg="Por favor ingrese el Parentesco">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Teléfono (código de país, de área u operadora y número)  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('telefonoEmergencia')">
+                      <div class="col-12">
+                        <label for="telefonoEmergencia" class="control-label required">Teléfono (código de país, de área
+                          u operadora y número)</label>
+                        <input type="text" class="form-control" id="telefonoEmergencia" placeholder="Teléfono"
+                          name="telefonoEmergencia" formControlName="telefonoEmergencia"
+                          [(ngModel)]="user.telefonoEmergencia" required>
+                        <app-app-field-error-display [displayError]="isFieldValid('telefonoEmergencia')"
+                          errorMsg="Por favor ingrese el Teléfono">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Email Emergencia -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('emailEmergencia')">
+                      <div class="col-12">
+                        <label for="emailEmergencia" class="control-label required">Correo electrónico</label>
+                        <input type="email" class="form-control" id="emailEmergencia" placeholder="Correo electrónico"
+                          name="emailEmergencia" formControlName="emailEmergencia" [(ngModel)]="user.emailEmergencia"
+                          required>
+                        <app-app-field-error-display [displayError]="isFieldValid('emailEmergencia')"
+                          errorMsg="Por favor ingrese el Correo electrónico">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+                  style="background-color:black">
+                  <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">DATOS DEL TALLER</h6>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-row">
+                    <!-- Track en el que desea participar -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('interesado')" *ngIf="!track">
+                      <div class="col-12">
+                        <label for="interesado" class="control-label required">Track en el que desea participar</label>
+                        <select class="form-control" id="interesado" id="interesado" placeholder="Track"
+                          name="interesado" formControlName="interesado" [(ngModel)]="user.interesado" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option *ngFor="let tra of tracks" value="{{tra._id}}">{{tra.titulo}}</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('interesado')"
+                          errorMsg="Por favor ingrese el Track">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-6" *ngIf="track">
+                      <div class="col-12">
+                        <label for="interesado" class="control-label">Track en el que desea participar</label>
+                        <textarea type="text" class="form-control" id="interesado" placeholder="Track" name="interesado"
+                          formControlName="interesado" [(ngModel)]="trackInteresado.titulo" readonly></textarea>
+
+                      </div>
+                    </div>
+                    <!-- Ha participado en algún taller organizado por ESLARED?  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('participcionAnterior')">
+                      <div class="col-12">
+                        <label for="participcionAnterior" class="control-label required">Ha participado en algún taller
+                          organizado por ESLARED?</label>
+                        <select class="form-control" id="participcionAnterior" id="participcionAnterior"
+                          name="participcionAnterior" formControlName="participcionAnterior"
+                          [(ngModel)]="user.participcionAnterior" #participcionAnterior required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="Si">Si</option>
+                          <option value="No">No</option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('participcionAnterior')"
+                          errorMsg="Por favor ingrese el Participacion Anterior">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Año en el que participó  -->
+                    <div class="form-group col-md-6" *ngIf="participcionAnterior.value == 'Si'">
+                      <div class="col-12">
+                        <label for="anoParticipado" class="control-label ">Año en el que participó</label>
+                        <select class="form-control" id="anoParticipado" id="anoParticipado" name="anoParticipado"
+                          formControlName="anoParticipado" [(ngModel)]="user.anoParticipado" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="2018-DO">2018-DO</option>
+                          <option value="2017-SV">2017-SV</option>
+                          <option value="2016-HN">2016-HN</option>
+                          <option value="2015-CR">2015-CR</option>
+                          <option value="2014-EC">2014-EC</option>
+                          <option value="2013-NI">2013-NI</option>
+                          <option value="2012-PA">2012-PA</option>
+                          <option value="2011-EC">2011-EC</option>
+                          <option value="2010-BO">2010-BO</option>
+                          <option value="2009-CO">2009-CO</option>
+                          <option value="2008-VE">2008-VE</option>
+                          <option value="2007-VE">2007-VE</option>
+                          <option value="2006-EC">2006-EC</option>
+                          <option value="2005-VE">2005-VE</option>
+                          <option value="2004-PE">2004-PE</option>
+                          <option value="2003-VE">2003-VE</option>
+                          <option value="2002-DO">2002-DO</option>
+                          <option value="2001-VE">2001-VE</option>
+                          <option value="2000-MX">2000-MX</option>
+                          <option value="1999-VE">1999-VE</option>
+                          <option value="1998-BR">1998-BR</option>
+                          <option value="1997-VE">1997-VE</option>
+                          <option value="1996-VE">1996-VE</option>
+                          <option value="1995-VE">1995-VE</option>
+                          <option value="1992-VE">1992-VE</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Taller en el que participó  -->
+                    <div class="form-group col-md-6" *ngIf="participcionAnterior.value == 'Si'">
+                      <div class="col-12">
+                        <label for="trackParticipado" class="control-label ">Taller en el que participó</label>
+                        <select class="form-control" id="trackParticipado" id="trackParticipado" name="trackParticipado"
+                          formControlName="trackParticipado" [(ngModel)]="user.trackParticipado" required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="Administración de gobernabilidad de los recursos de internet">Administración de
+                            gobernabilidad de los recursos de internet</option>
+                          <option value="Administración de proyectos de redes y telecomunicaciones">Administración de
+                            proyectos de redes y telecomunicaciones</option>
+                          <option value="Alta disponibilidad y virtualización">Alta disponibilidad y virtualización
+                          </option>
+                          <option value="Big Data">Big Data</option>
+                          <option value="Computación en la Nube">Computación en la Nube</option>
+                          <option value="Desarrolladores de contenido en AL&amp;C">Desarrolladores de contenido en
+                            AL&amp;C</option>
+                          <option value="Desarrollo de contenidos">Desarrollo de contenidos</option>
+                          <option value="Desarrollo web con software libre">Desarrollo web con software libre</option>
+                          <option value="Desarrollo y producción de contenidos">Desarrollo y producción de contenidos
+                          </option>
+                          <option value="Despliegue de IPv6">Despliegue de IPv6</option>
+                          <option value="Diseño de redes universitarias, de educación e investigación">Diseño de redes
+                            universitarias, de educación e investigación</option>
+                          <option value="E-Learning">E-Learning</option>
+                          <option value="Enrutamiento avanzado y multicast">Enrutamiento avanzado y multicast</option>
+                          <option value="Enrutamiento e internet">Enrutamiento e internet</option>
+                          <option value="Foro: Internet y sociedad">Foro: Internet y sociedad</option>
+                          <option value="Gerencia de redes y de servicios de información">Gerencia de redes y de
+                            servicios de información</option>
+                          <option value="Gestión de Redes">Gestión de Redes</option>
+                          <option value="Gestión de proyectos TIC">Gestión de proyectos TIC</option>
+                          <option value="Internet de las Cosas">Internet de las Cosas</option>
+                          <option value="Migración a soluciones de software libre">Migración a soluciones de software
+                            libre</option>
+                          <option value="Producción de contenidos en proyectos tics para el desarrollo social">
+                            Producción de contenidos en proyectos tics para el desarrollo social</option>
+                          <option value="Protocolos TCP/IP">Protocolos TCP/IP</option>
+                          <option value="Protocolos de redes de área local">Protocolos de redes de área local</option>
+                          <option value="Redes Comunitarias">Redes Comunitarias</option>
+                          <option value="Redes de sensores inalámbricos">Redes de sensores inalámbricos</option>
+                          <option value="Redes inalámbricas para la transmisión de datos">Redes inalámbricas para la
+                            transmisión de datos</option>
+                          <option
+                            value="Registro de direcciones IP en Latino América y el Caribe (LACNIC), y políticas de asignación de dominios">
+                            Registro de direcciones IP en Latino América y el Caribe (LACNIC), y políticas de asignación
+                            de dominios</option>
+                          <option value="Seguridad de redes">Seguridad de redes</option>
+                          <option value="Seguridad informática">Seguridad informática</option>
+                          <option value="Servicios de información en ambientes internet/intranet/extranet">Servicios de
+                            información en ambientes internet/intranet/extranet</option>
+                          <option value="Sistema de información geográfica (GIS) con software libre">Sistema de
+                            información geográfica (GIS) con software libre</option>
+                          <option value="Taller de gerencia teleinformática">Taller de gerencia teleinformática</option>
+                          <option value="Taller de unix">Taller de unix</option>
+                          <option value="Tecnología de redes">Tecnología de redes</option>
+                          <option value="Tecnologías de internet para bibliotecas">Tecnologías de internet para
+                            bibliotecas</option>
+                          <option value="Telecomunicaciones">Telecomunicaciones</option>
+                          <option value="Telefonía IP">Telefonía IP</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Que Expectativas tiene del conocimiento que adquirirá en el taller?   -->
+                    <div class="form-group col-md-6">
+                      <div class="col-12">
+                        <label for="expectativaTaller" class="control-label">Que Expectativas tiene del conocimiento que
+                          adquirirá en el taller?</label>
+                        <input type="text" class="form-control" id="expectativaTaller" placeholder="Expectativas"
+                          name="expectativaTaller" formControlName="expectativaTaller"
+                          [(ngModel)]="user.expectativaTaller" required>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="card">
+                <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+                  style="background-color:black">
+                  <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">MATRÍCULA</h6>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-row">
+                    
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('ayudaEconomica')">
+                      <div class="col-12">
+                        <label for="ayudaEconomica" class="control-label required">Requiere ayuda económica para la
+                          matrícula?</label>
+                        <select class="form-control" id="ayudaEconomica" id="ayudaEconomica" name="ayudaEconomica"
+                          formControlName="ayudaEconomica" [(ngModel)]="user.ayudaEconomica" #ayudaEconomica required>
+                          <option selected="selected" value="" disabled>Elija una Opción </option>
+                          <option value="Ninguna (No necesito ayuda)">Ninguna (No necesito ayuda)</option>
+                          <option value="Media Matrícula (Sujeto al apoyo externo)">Media Matrícula (Sujeto al apoyo
+                            externo)</option>
+                          <option value="Matrícula (Sujeto al apoyo externo)">Matrícula (Sujeto al apoyo externo)
+                          </option>
+                        </select>
+                        <app-app-field-error-display [displayError]="isFieldValid('ayudaEconomica')"
+                          errorMsg="Por favor ingrese el Ayuda Economica">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group col-md-6" *ngIf="ayudaEconomica.value == 'Media Matrícula (Sujeto al apoyo externo)' ||ayudaEconomica.value == 'Matrícula (Sujeto al apoyo externo)'">
+                      <div class="col-12">
+                        <label for="justificacionEconomica"
+                          class="control-label">Justificación para la ayuda</label>
+                        <textarea type="text" class="form-control" id="justificacionEconomica"
+                          placeholder="Justificación para la ayuda" name="justificacionEconomica"
+                          formControlName="justificacionEconomica"                    
+                          [(ngModel)]="user.justificacionEconomica" required></textarea>                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <div class="card">
+                <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm"
+                  style="background-color:black">
+                  <div class="lh-100">
+                    <h6 class="mb-0 text-white lh-100">DATOS USUARIO</h6>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="form-row">
+                    <!-- Email Personal  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('emailPersonal')">
+                      <div class="col-12">
+                        <label for="emailPersonal" class="control-label required">Email Personal (Con este correo
+                          inciara sesión)</label>
+                        <input type="email" class="form-control" id="emailPersonal" placeholder="Email Personal"
+                          name="emailPersonal" formControlName="emailPersonal" [(ngModel)]="user.emailPersonal"
+                          required>
+                        <app-app-field-error-display [displayError]="isFieldValid('emailPersonal')"
+                          errorMsg="Por favor ingrese el Email Personal">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                    <!-- Password  -->
+                    <div class="form-group col-md-6" [ngClass]="displayFieldCss('password')">
+                      <div class="col-12">
+                        <label for="password" class="control-label required">Contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="Contraseña"
+                          name="emailPersonal" formControlName="password" [(ngModel)]="user.password" required>
+                        <app-app-field-error-display [displayError]="isFieldValid('password')"
+                          errorMsg="Por favor ingrese la Contraseña">
+                        </app-app-field-error-display>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn btn-primary" style="margin-left: 45%" (click)="onSubmit()">Registrarse al
+              evento</button>
+
+          </div>
+
+        </form>
+      </main>
+    </div>
+  </div>
+</body>
+<br>
